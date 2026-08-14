@@ -1,0 +1,2409 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-Portfolio - Arbiansyah</title>
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Instrument+Serif:ital@0;1&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome 6 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <!-- Owl Carousel -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    />
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        corePlugins: { preflight: false },
+        prefix: 'tw-',
+      }
+    </script>
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <style>
+      /* Typing cursor */
+      .typing-cursor {
+        display: inline-block;
+        font-weight: 400;
+        color: var(--accent, #22d3ee);
+        margin-left: 1px;
+        line-height: 1;
+        vertical-align: baseline;
+        user-select: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="progress-bar" id="progress-bar"></div>
+
+    <!-- NAV -->
+    <nav>
+      <div class="logo">PPG (Pendidikan Profesi Guru)</div>
+      <ul class="nav-links">
+        <li class="nav-item">
+          <a class="nav-link" href="eportfolio-v2.html">
+            <i class="fa-solid fa-file-circle-check tw-mr-1"></i> E-Portfolio 2
+          </a>
+        </li>
+        <li class="nav-item has-submenu">
+          <a class="nav-link" href="#profil">
+            <i class="fa-solid fa-user tw-mr-1"></i> Profil Mahasiswa
+            <i class="fa-solid fa-chevron-down nav-chevron"></i>
+          </a>
+          <ul class="submenu">
+            <li>
+              <a class="nav-link nav-sublink" href="#data-diri">
+                <i class="fa-solid fa-id-card tw-mr-1"></i> Data Diri
+              </a>
+            </li>
+            <li>
+              <a class="nav-link nav-sublink" href="#keunikan-daerah">
+                <i class="fa-solid fa-map-location-dot tw-mr-1"></i> Keunikan Daerah
+              </a>
+            </li>
+            <li>
+              <a class="nav-link nav-sublink" href="#inspirasi-guru">
+                <i class="fa-solid fa-lightbulb tw-mr-1"></i> Inspirasi Jadi Guru
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item has-submenu">
+          <a class="nav-link" href="#artefak">
+            <i class="fa-solid fa-layer-group tw-mr-1"></i> Artefak
+            <i class="fa-solid fa-chevron-down nav-chevron"></i>
+          </a>
+          <ul class="submenu">
+            <li>
+              <a class="nav-link nav-sublink" href="#modul-ajar">
+                <i class="fa-solid fa-book tw-mr-1"></i> Modul Ajar
+              </a>
+            </li>
+            <li>
+              <a class="nav-link nav-sublink" href="#atp-section">
+                <i class="fa-solid fa-sitemap tw-mr-1"></i> ATP
+              </a>
+            </li>
+            <li>
+              <a class="nav-link nav-sublink" href="#galeri">
+                <i class="fa-solid fa-images tw-mr-1"></i> Galeri
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item has-submenu">
+          <a class="nav-link" href="#lampiran">
+            <i class="fa-solid fa-file-lines tw-mr-1"></i> Lampiran
+            <i class="fa-solid fa-chevron-down nav-chevron"></i>
+          </a>
+          <ul class="submenu">
+            <li>
+              <a class="nav-link nav-sublink" href="#lampiran-7">
+                <i class="fa-solid fa-clipboard-list tw-mr-1"></i> Lampiran 7
+              </a>
+            </li>
+            <li>
+              <a class="nav-link nav-sublink" href="#lampiran-8">
+                <i class="fa-solid fa-chalkboard-user tw-mr-1"></i> Lampiran 8
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#model-guru">
+            <i class="fa-solid fa-bullseye tw-mr-1"></i> Visi & Misi
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#refleksi-diri">
+            <i class="fa-solid fa-mirror tw-mr-1"></i> Refleksi Diri
+          </a>
+        </li>
+      </ul>
+      <div class="nav-actions">
+        <button
+          class="theme-toggle"
+          id="theme-toggle"
+          type="button"
+          aria-pressed="false"
+        >
+          <span class="theme-icon"><i class="fa-solid fa-moon"></i></span>
+          <span class="theme-text">Gelap</span>
+        </button>
+        <button
+          class="hamburger"
+          id="hamburger"
+          aria-label="Buka menu"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+    <div class="nav-overlay" id="nav-overlay"></div>
+
+    <main>
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero-grid"></div>
+        <div class="hero-glow"></div>
+        <div class="hero-content">
+          <div class="hero-tag">
+            <i class="fa-solid fa-sparkles"></i> E-Portfolio PPL Terbimbing ·
+            Pendidikan Profesi Guru 2026
+          </div>
+          <h1 class="hero-name">Arbians<span>yah</span></h1>
+          <p class="hero-title">Programmer · Calon Guru · Lifelong Learner</p>
+          <blockquote class="hero-quote">
+            <span id="typing-quote"></span
+            ><span class="typing-cursor" aria-hidden="true">|</span>
+          </blockquote>
+          <div class="hero-meta">
+            <div class="meta-chip">
+              <i class="fa-solid fa-location-dot" style="color:var(--accent3);font-size:0.8rem;"></i> Kendari, Sulawesi Tenggara
+            </div>
+            <div class="meta-chip">
+              <i class="fa-solid fa-laptop-code" style="color:var(--accent3);font-size:0.8rem;"></i> Pendidikan Teknologi Informasi
+            </div>
+            <div class="meta-chip">
+              <i class="fa-solid fa-university" style="color:var(--accent3);font-size:0.8rem;"></i> Universitas Islam Makassar PPG
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="portfolio-1">        <div class="section-label fade-in">E-Portfolio 1</div>
+        <h2 class="section-title fade-in">
+          Refleksi Akhir <span class="section-accent">PPL Terbimbing</span>
+        </h2>
+        <div class="highlight-box fade-in">
+          <p>
+            Ujian ini bagian dari refleksi akhir PPL Terbimbing berupa
+            E-Portfolio 1. E-Portfolio 1 bertujuan untuk memberikan refleksi
+            awal sebagai fondasi dasar karakter mahasiswa dan memuat profil
+            mahasiswa, analisis artefak produk pembelajaran, lampiran penilaian,
+            serta model guru yang dituju.
+          </p>
+          <p>
+            Unsur penilaian E-Portfolio meliputi profil guru, kedalaman analisis
+            produk, refleksi diri, serta navigasi dan tampilan. Portal ini
+            disusun dalam satu website agar mudah diakses, setara dengan
+            penggunaan platform seperti Google Sites, Wix, atau Canva.
+          </p>
+        </div>
+      </section>
+
+      <!-- PROFIL MAHASISWA -->
+      <section
+        class="section"
+        style="padding-bottom: 0px !important; padding-top: 0px !important"
+        id="profil"
+        data-section
+      >        <h2 class="section-title fade-in">
+          Profil <span class="section-accent">Mahasiswa</span>
+        </h2>
+        <p class="section-lead fade-in">
+          Gambaran diri, latar belakang, dan alasan kuat menjadi pendidik yang
+          memadukan teknologi dan pembelajaran.
+        </p>
+      </section>
+
+      <section class="section section-sub" id="data-diri" data-section>
+        <h3 class="section-title fade-in">Data Diri</h3>
+        <div class="profile-grid fade-in">
+          <div class="profile-sidebar">
+            <div class="profile-photo slide-in-left">
+              <img
+                src="assets/images/profile-1.png"
+                alt="Foto profil Arbiansyah"
+                loading="lazy"
+              />
+            </div>
+            <div class="profile-name">Arbiansyah</div>
+            <ul class="info-list">
+              <li>
+                <i class="fa-solid fa-cake-candles info-icon--a"></i>
+                <div><strong>Lahir</strong><br />2 April 2002</div>
+              </li>
+              <li>
+                <i class="fa-solid fa-location-dot info-icon--b"></i>
+                <div>
+                  <strong>Domisili</strong><br />Kendari, Sulawesi Tenggara
+                </div>
+              </li>
+              <li>
+                <i class="fa-solid fa-briefcase info-icon--c"></i>
+                <div><strong>Pengalaman</strong><br />Programmer ±3 Tahun</div>
+              </li>
+              <li>
+                <i class="fa-solid fa-bullseye info-icon--a"></i>
+                <div><strong>Fokus</strong><br />Web Dev & Education</div>
+              </li>
+              <li>
+                <i class="fa-solid fa-school info-icon--b"></i>
+                <div><strong>Program</strong><br />PPG – UIM Makassar</div>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <div class="narrative" >
+              <p>
+                Saya Arbiansyah, berasal dari Kendari, Sulawesi Tenggara. Saat
+                ini saya bekerja sebagai Web Developer di salah satu software
+                house di kota kendari, sebuah pengalaman yang membuat saya terus
+                belajar dan berkembang di dunia teknologi, khususnya dalam
+                pengembangan sistem dan aplikasi berbasis web. Selain itu, saya
+                merupakan alumni Program Studi Pendidikan Teknologi Informasi
+                Universitas Muhammadiyah Kendari angkatan 2020 dan menyelesaikan
+                studi pada tahun 2024.
+              </p>
+              <p>
+                Saat ini saya juga sedang menempuh Program Pendidikan Profesi
+                Guru (PPG) di Universitas Islam Makassar. Keinginan saya menjadi
+                guru lahir dari pengalaman saya berada langsung di dunia
+                industri. Saya ingin membawa pengalaman nyata tersebut ke
+                lingkungan sekolah agar peserta didik tidak hanya memahami
+                teori, tetapi juga mengetahui bagaimana ilmu yang dipelajari
+                diterapkan dalam dunia kerja dan perkembangan teknologi saat
+                ini.
+              </p>
+              <p>
+                Saya percaya bahwa pendidikan harus mampu menjembatani kebutuhan
+                industri dengan kemampuan peserta didik. Karena itu, tujuan saya
+                adalah menjadi guru yang dapat membagikan pengalaman,
+                keterampilan, dan wawasan praktis kepada siswa sehingga mereka
+                lebih siap menghadapi tantangan di era digital. Saya ingin
+                membantu siswa memahami bahwa teknologi bukan hanya tentang
+                menggunakan perangkat, tetapi juga tentang berpikir kreatif,
+                memecahkan masalah, dan terus beradaptasi dengan perkembangan
+                zaman.
+              </p>
+              <p>
+                Bagi saya, profesi guru memiliki makna yang sangat dalam, karena
+                saya percaya bahwa cara terbaik untuk belajar adalah dengan
+                mengajar. Ketika seseorang mengajarkan ilmu kepada orang lain,
+                maka ia juga sedang memperkuat pemahaman dan terus mengembangkan
+                dirinya sendiri. Oleh sebab itu, menjadi guru bukan hanya
+                tentang berbagi pengetahuan, tetapi juga tentang perjalanan
+                belajar tanpa henti untuk terus tumbuh dan memberi manfaat bagi
+                banyak orang.
+              </p>
+
+              <!-- MOTIVASI PPG -->
+              <div class="motivasi-block">
+                <div class="motivasi-label">
+                  <i class="fa-solid fa-fire-flame-curved"></i> Motivasi Mengikuti PPG
+                </div>
+                <div class="motivasi-body">
+                  <p>
+                    Keputusan saya mengikuti Program Pendidikan Profesi Guru (PPG) bukan lahir dari tuntutan administrasi, melainkan dari sebuah kegelisahan yang tumbuh selama bertahun-tahun bekerja di industri teknologi. Saya menyaksikan betapa banyak lulusan SMK yang memasuki dunia kerja dengan pengetahuan teoritis yang cukup, namun lemah dalam keterampilan praktis dan adaptabilitas digital. Kesenjangan ini mendorong saya untuk bergerak — bukan hanya sebagai programmer, tetapi sebagai pendidik yang mampu menjembatani dunia industri dengan dunia sekolah.
+                  </p>
+                  <p>
+                    PPG menjadi jalan saya untuk memperoleh kompetensi pedagogik yang terstruktur, sehingga pengalaman industri yang saya miliki dapat ditransformasikan menjadi pembelajaran yang bermakna bagi peserta didik. Saya ingin menjadi bukti hidup bahwa guru yang pernah bekerja di industri nyata dapat menghadirkan pembelajaran TIK yang relevan, kontekstual, dan menginspirasi.
+                  </p>
+                </div>
+              </div>
+
+              <!-- VISI PRIBADI & KUTIPAN -->
+              <div class="visi-kutipan-block">
+                <div class="visi-kutipan-label">Visi Pribadi sebagai Pendidik</div>
+                <div class="visi-kutipan-text">
+                  Menjadi guru teknologi informasi yang tidak hanya mengajarkan cara mengoperasikan perangkat lunak, tetapi juga membangun pola pikir komputasional, kreativitas digital, dan karakter tangguh pada setiap peserta didik. Saya ingin menjadi pendidik yang dipercaya oleh siswa sebagai mitra belajar sekaligus pembuka jendela peluang di era digital.
+                </div>
+                <div class="visi-kutipan-quote">
+                  "Teknologi adalah bahasa masa depan. Tugas saya adalah mengajarkan generasi berikutnya untuk berbicara, berpikir, dan berkreasi dalam bahasa tersebut."
+                  <span style="display:block;margin-top:0.4rem;font-size:0.78rem;opacity:0.7;font-style:normal;">— Arbiansyah</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-sub" id="lokasi-lptk" data-section>
+        <h3 class="section-title fade-in">Lokasi LPTK</h3>
+        <p class="section-lead fade-in">
+          LPTK saya berada di Universitas Islam Makassar (UIM) dan menjadi
+          tempat saya menempuh Program Pendidikan Profesi Guru.
+        </p>
+        <div
+          class="card-grid card-grid-2 card-grid--spaced lokasi-lptk-grid fade-in"
+        >
+          <div class="highlight-box lokasi-lptk-copy">
+            <p>
+              Lokasi LPTK ini menjadi pusat kegiatan perkuliahan, pendampingan,
+              dan pengembangan kompetensi calon guru. Saya menempuh proses PPG
+              di UIM Makassar dengan fokus pada pembelajaran yang adaptif,
+              relevan, dan selaras dengan kebutuhan era digital.
+            </p>
+            <p>
+              Universitas Islam Makassar berlokasi di Kota Makassar, Sulawesi
+              Selatan, dan mudah diakses melalui peta di samping. Berikut
+              tampilan lokasi agar informasi kampus lebih jelas dan mudah
+              dikenali.
+            </p>
+            <ul class="info-list">
+              <li>
+                <i class="fa-solid fa-building-columns info-icon--a"></i>
+                <div><strong>LPTK</strong><br />Universitas Islam Makassar</div>
+              </li>
+              <li>
+                <i class="fa-solid fa-location-dot info-icon--b"></i>
+                <div><strong>Kota</strong><br />Makassar, Sulawesi Selatan</div>
+              </li>
+              <li>
+                <i class="fa-solid fa-graduation-cap info-icon--c"></i>
+                <div><strong>Program</strong><br />PPG Calon Guru</div>
+              </li>
+            </ul>
+          </div>
+          <div class="media-card lokasi-lptk-map-card">
+            <div class="media-embed media-embed--tall lokasi-lptk-map">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3973.7689555704774!2d119.4780456749821!3d-5.140858894836357!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbf02a7e0adbbeb%3A0xe9fbbb77bf3cc0b0!2sMakassar%20Islamic%20University!5e0!3m2!1sen!2sid!4v1779411788313!5m2!1sen!2sid"
+                title="Lokasi Universitas Islam Makassar"
+                allowfullscreen
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-sub" id="keunikan-daerah" data-section>
+        <h3 class="section-title fade-in">Daerah Asal</h3>
+        <div class="highlight-box fade-in">
+          <p>
+            Kendari merupakan ibu kota Provinsi Sulawesi Tenggara yang terkenal
+            dengan keindahan alam pesisir, budaya tradisional, serta keramahan
+            masyarakatnya. Kota ini berada di sekitar Teluk Kendari yang menjadi
+            ikon utama daerah tersebut. Kehadiran Jembatan Teluk Kendari membuat
+            pemandangan kota semakin modern dan indah, terutama pada malam hari
+            ketika lampu jembatan menyala di atas laut. Kendari juga dikenal
+            sebagai “Kota Lulo” karena tarian tradisional Lulo yang melambangkan
+            persatuan, kebersamaan, dan persahabatan masyarakat suku Tolaki.
+          </p>
+          <p>
+            Selain budaya, Kendari memiliki banyak wisata alam menarik seperti
+            Pantai Nambo yang terkenal dengan pasir putihnya, serta akses menuju
+            Pulau Bokori dan Air Terjun Moramo yang menjadi destinasi favorit
+            wisatawan. Suasana kota yang berada di tepi laut membuat udara
+            terasa lebih sejuk dan nyaman dibandingkan banyak kota besar
+            lainnya.
+          </p>
+          <p>
+            Keunikan lain dari Kendari adalah makanan khasnya. Salah satu yang
+            paling terkenal adalah Sinonggi, makanan berbahan dasar sagu yang
+            memiliki tekstur kenyal dan biasanya disantap bersama kuah ikan atau
+            sayur. Selain itu ada juga Kabuto yang terbuat dari ubi kayu kering,
+            serta Lapa-Lapa yang mirip lontong dan sering disajikan saat
+            perayaan adat atau hari besar. Masyarakat Kendari juga terkenal
+            dengan aneka olahan hasil laut segar seperti ikan bakar, cumi, dan
+            udang karena letaknya yang dekat dengan laut.
+          </p>
+          <p>
+            Di bidang budaya, masyarakat Kendari terdiri dari berbagai suku
+            seperti Tolaki, Bugis, Buton, dan Muna yang hidup berdampingan
+            dengan harmonis. Keberagaman ini membuat Kendari kaya akan tradisi,
+            bahasa daerah, seni tari, hingga festival budaya. Kombinasi antara
+            alam, budaya, kuliner, dan perkembangan kota menjadikan Kendari
+            sebagai salah satu kota unik dan menarik di kawasan timur Indonesia.
+          </p>
+        </div>
+
+        <div class="owl-carousel owl-theme image-gallery fade-in">
+          <figure class="gallery-card">
+            <img
+              class="gallery-image"
+              src="assets/images/city/image-1.jpeg"
+              alt="Pemandangan Kendari"
+              loading="lazy"
+            />
+          </figure>
+          <figure class="gallery-card">
+            <img
+              class="gallery-image"
+              src="assets/images/city/image-2.jpeg"
+              alt="Pantai dan pesisir Kendari"
+              loading="lazy"
+            />
+          </figure>
+          <figure class="gallery-card">
+            <img
+              class="gallery-image"
+              src="assets/images/city/image-3.jpg"
+              alt="Jembatan Teluk Kendari"
+              loading="lazy"
+            />
+          </figure>
+          <figure class="gallery-card">
+            <img
+              class="gallery-image"
+              src="assets/images/city/image-4.jpeg"
+              alt="Festival dan budaya lokal"
+              loading="lazy"
+            />
+          </figure>
+          <figure class="gallery-card">
+            <img
+              class="gallery-image"
+              src="assets/images/city/image-5.jpeg"
+              alt="Kuliner khas Kendari"
+              loading="lazy"
+            />
+          </figure>
+          <figure class="gallery-card">
+            <img
+              class="gallery-image"
+              src="assets/images/city/image-6.jpeg"
+              alt="Sinonggi dan makanan lokal"
+              loading="lazy"
+            />
+          </figure>
+        </div>
+      </section>
+
+      <section class="section section-sub" id="inspirasi-guru" data-section>
+        <h3 class="section-title fade-in">Inspirasi Jadi Guru</h3>
+        <div class="narrative fade-in">
+          <p>
+            Namun di tengah baris-baris kode yang saya tulis setiap hari, ada
+            satu pertanyaan yang terus mengusik:
+            <em
+              >"Apa gunanya ilmu ini jika hanya tersimpan untuk diri
+              sendiri?"</em
+            >
+            Dari pertanyaan itulah panggilan untuk menjadi seorang guru lahir
+            bukan guru biasa, melainkan guru yang mampu menjembatani dunia
+            teknologi dengan generasi muda yang haus akan kompetensi digital.
+          </p>
+        </div>
+        <blockquote class="hero-quote hero-quote--tight fade-in">
+          "Cara terbaik untuk belajar adalah dengan mengajar"
+        </blockquote>
+        <div class="card-grid card-grid-2 card-grid--spaced fade-in">
+          <div>
+            <h3 class="section-eyebrow">
+              <i
+                class="fa-solid fa-graduation-cap"
+                style="color: var(--accent2); margin-right: 0.5rem"
+              ></i
+              >Pendidikan Formal
+            </h3>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-year">2008 2014</div>
+                <div class="timeline-school">SDN 2 Wia-Wia</div>
+                <div class="timeline-detail">Sekolah Dasar</div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-year">2014 2017</div>
+                <div class="timeline-school">SMPN 10 Kendari</div>
+                <div class="timeline-detail">Sekolah Menengah Pertama</div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-year">2017 2020</div>
+                <div class="timeline-school">SMKN 4 Kendari</div>
+                <div class="timeline-detail">
+                  Teknik Komputer Jaringan (TKJ)
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-year">2020 2024</div>
+                <div class="timeline-school">
+                  Universitas Muhammadiyah Kendari
+                </div>
+                <div class="timeline-detail">
+                  S1 Pendidikan Teknologi Informasi
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot timeline-dot--accent"></div>
+                <div class="timeline-year timeline-year--accent">
+                  2025 Sekarang
+                </div>
+                <div class="timeline-school">Universitas Islam Makassar</div>
+                <div class="timeline-detail">PPG – Aktif</div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h3 class="section-eyebrow">
+              <i
+                class="fa-solid fa-rocket"
+                style="color: var(--accent); margin-right: 0.5rem"
+              ></i
+              >Pengembangan & Pengalaman
+            </h3>
+            <div class="card card--stack">
+              <div class="card-icon"><i class="fa-solid fa-briefcase"></i></div>
+              <div class="card-title">Programmer Technos Studio Kendari</div>
+              <div class="card-body">
+                Backend development menggunakan Laravel (REST API,
+                Authentication, Dashboard), dan Golang (High-performance API,
+                Concurrency, Clean Architecture).
+              </div>
+            </div>
+            <div class="card card--stack">
+              <div class="card-icon">
+                <i class="fa-solid fa-graduation-cap"></i>
+              </div>
+              <div class="card-title">Bootcamp Kampus Merdeka</div>
+              <div class="card-body">
+                Fullstack Web Development Intensif coding dan kolaborasi lintas
+                kampus.
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-icon">
+                <i class="fa-solid fa-globe-asia"></i>
+              </div>
+              <div class="card-title">Pijar Inspirasi</div>
+              <div class="card-body">
+                Program sosial berbasis komunitas untuk pemberdayaan dan
+                pendampingan generasi muda di Sulawesi Tenggara.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- ARTEFAK -->
+      <section class="section" id="artefak" data-section>        <h2 class="section-title fade-in">
+          Artefak <span class="section-accent">Pembelajaran</span>
+        </h2>
+        <div class="highlight-box fade-in">
+          <p>
+            Selama pelaksanaan <strong class="text-strong">PPL Terbimbing</strong>, saya merancang dan melaksanakan
+            <strong class="text-strong">5 Modul Ajar</strong> yang terbagi dalam tiga siklus praktik mengajar. Setiap modul dikembangkan secara sistematis dengan memadukan pendekatan pedagogi modern, teknologi digital, dan kebutuhan nyata siswa di lapangan.
+          </p>
+          <p>
+            Setiap siklus dilengkapi dengan <strong class="text-strong">analisis mendalam</strong> terhadap artefak pembelajaran  mencakup konteks pelaksanaan, tujuan, kendala, landasan teori pedagogi, kelebihan dan kekurangan artefak, faktor keberhasilan, serta adaptasi untuk berbagai kondisi kelas. Pilih siklus di bawah untuk menjelajahi modul, media ajar, LKPD, dan penilaian Guru Pamong dari masing-masing siklus.
+          </p>
+        </div>
+
+        <!-- Anchor for modul-ajar -->
+        <div id="modul-ajar" style="position:relative;top:-80px;"></div>
+
+        <!-- ATP SECTION -->
+        <div id="atp-section" style="position:relative;top:-80px;"></div>
+        <div class="artefak-category-label fade-in" style="margin-top:1.5rem;">
+          <i class="fa-solid fa-sitemap"></i> Alur Tujuan Pembelajaran (ATP)
+        </div>
+        <div class="highlight-box fade-in" style="margin-bottom:1rem;">
+          <p>
+            Alur Tujuan Pembelajaran (ATP) disusun sebagai panduan urutan kompetensi yang harus dikuasai peserta didik secara bertahap dan berkesinambungan selama satu tahun pelajaran. ATP ini menjadi acuan utama dalam penyusunan seluruh Modul Ajar di tiga siklus PPL Terbimbing.
+          </p>
+        </div>
+        <div class="atp-doc-row fade-in">
+          <a
+            class="media-chip media-chip--doc"
+            href="#media-ajar"
+            data-modal="pdf"
+            data-src="https://drive.google.com/file/d/1LabBmaZvW4KjFIMBeqZTVypE21H9pgaV/preview"
+            data-title="ATP – Informatika Kelas X/XI"
+          >
+            <i class="fa-solid fa-file-pdf"></i> ATP Informatika Kelas X/XI
+          </a>
+          <a
+            class="media-chip media-chip--doc"
+            href="#media-ajar"
+            data-modal="pdf"
+            data-src="https://drive.google.com/file/d/1LabBmaZvW4KjFIMBeqZTVypE21H9pgaV/preview"
+            data-title="ATP – Pemrograman Web Kelas X/XI"
+          >
+            <i class="fa-solid fa-file-pdf"></i> ATP Pemrograman Web Kelas X/XI
+          </a>
+        </div>
+
+        <!-- SIKLUS SELECTOR -->
+        <div class="siklus-selector-wrap fade-in" id="artefak-siklus">
+          <div class="siklus-tabs" role="tablist" aria-label="Pilih Siklus">
+            <button
+              class="siklus-tab active"
+              role="tab"
+              aria-selected="true"
+              aria-controls="siklus-panel-1"
+              data-siklus="1"
+            >
+              <span class="siklus-tab-num">01</span>
+              <span class="siklus-tab-info">
+                <strong>Siklus 1</strong>
+                <small>Pertemuan 1–4</small>
+              </span>
+            </button>
+            <button
+              class="siklus-tab"
+              role="tab"
+              aria-selected="false"
+              aria-controls="siklus-panel-2"
+              data-siklus="2"
+            >
+              <span class="siklus-tab-num">02</span>
+              <span class="siklus-tab-info">
+                <strong>Siklus 2</strong>
+                <small>Pertemuan 5–8</small>
+              </span>
+            </button>
+            <button
+              class="siklus-tab"
+              role="tab"
+              aria-selected="false"
+              aria-controls="siklus-panel-3"
+              data-siklus="3"
+            >
+              <span class="siklus-tab-num">03</span>
+              <span class="siklus-tab-info">
+                <strong>Siklus 3</strong>
+                <small>Pertemuan 9–12</small>
+              </span>
+            </button>
+          </div>
+
+          <!-- PANEL SIKLUS 1 -->
+          <div class="siklus-panel active" id="siklus-panel-1" role="tabpanel">
+            <div class="siklus-panel-header">
+              <div class="siklus-badge s1">S1</div>
+              <div>
+                <h3 class="siklus-panel-title">Siklus 1</h3>
+                <p class="siklus-panel-sub">Pertemuan 1 – 4 · 1 Modul Ajar</p>
+              </div>
+            </div>
+
+            <!-- MODUL AJAR -->
+            <div class="artefak-category-label">
+              <i class="fa-solid fa-book"></i> Modul Ajar
+            </div>
+            <div class="modul-list">
+              <div class="modul-item">
+                <div class="modul-item-badge">M-01</div>
+                <div class="modul-item-body">
+                  <div class="modul-item-title">
+                    Pemrograman Web: Desain Website dengan CMS WordPress
+                  </div>
+                  <div class="modul-item-desc">
+                    Pertemuan 1–4 · Kelas X/XI · TIK / Informatika
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- MEDIA AJAR -->
+            <div class="artefak-category-label">
+              <i class="fa-solid fa-photo-film"></i> Media Ajar
+            </div>
+            <div class="media-chip-row">
+              <a
+                class="media-chip media-chip--ppt"
+                href="#media-ajar"
+                data-modal="pdf"
+                data-src="https://docs.google.com/presentation/d/1ylaaJM01oJdyPV8flxQPV19ZOAHeXUf2/preview"
+                data-title="PPT Pemrograman Web – Siklus 1"
+              >
+                <i class="fa-solid fa-file-powerpoint"></i> PPT Pemrograman Web
+              </a>
+              <a
+                class="media-chip media-chip--doc"
+                href="#media-ajar"
+                data-modal="pdf"
+                data-src="https://drive.google.com/file/d/1Pd0H56e0q8WNw2x8laMuIUtPTvWTQPgh/preview"
+                data-title="Modul Ajar Pemrograman Web – Siklus 1"
+              >
+                <i class="fa-solid fa-file-pdf"></i> Modul Ajar
+              </a>
+            </div>
+
+            <!-- LKPD & HASIL KERJA -->
+            <div class="artefak-category-label">
+              <i class="fa-solid fa-clipboard-check"></i> LKPD & Hasil Kerja
+              Siswa
+            </div>
+            <div class="lkpd-grid">
+              <div class="lkpd-card">
+                <div class="lkpd-icon"><i class="fa-solid fa-globe"></i></div>
+                <div class="lkpd-title">Website WordPress Siswa</div>
+                <div class="lkpd-desc">
+                  Setiap kelompok menghasilkan website sederhana dengan konten
+                  terstruktur dan navigasi yang rapi.
+                </div>
+              </div>
+              <div class="lkpd-card">
+                <div class="lkpd-icon"><i class="fa-solid fa-palette"></i></div>
+                <div class="lkpd-title">Desain Tema & Branding</div>
+                <div class="lkpd-desc">
+                  Siswa menyesuaikan tema, warna, dan identitas visual sesuai
+                  kebutuhan proyek.
+                </div>
+              </div>
+            </div>
+
+            <!-- ANALISIS & REFLEKSI SIKLUS 1 -->
+            <div class="artefak-category-label">
+              <i class="fa-solid fa-magnifying-glass-chart"></i> Analisis &amp; Refleksi Artefak Siklus 1
+            </div>
+            <div class="analisis-refleksi-block fade-in">
+              <div class="ar-grid">
+                <div class="ar-item ar-item--konteks">
+                  <div class="ar-item-header">
+                    <span class="ar-icon"><i class="fa-solid fa-map-location-dot"></i></span>
+                    <span class="ar-label">1. Konteks</span>
+                  </div>
+                  <div class="ar-content">
+                    Siklus 1 dilaksanakan di kelas X/XI jurusan TIK/Informatika SMK yang memiliki fasilitas laboratorium komputer dengan akses internet terbatas. Sebagian besar siswa belum pernah menggunakan platform CMS sebelumnya. Artefak berupa Modul Ajar <em>Desain Website dengan CMS WordPress</em> disusun untuk menjawab kebutuhan penguatan kompetensi praktik berbasis proyek nyata di awal siklus PPL.
+                  </div>
+                </div>
+                <div class="ar-item ar-item--tujuan">
+                  <div class="ar-item-header">
+                    <span class="ar-icon"><i class="fa-solid fa-bullseye"></i></span>
+                    <span class="ar-label">2. Tujuan</span>
+                  </div>
+                  <div class="ar-content">
+                    Modul ajar bertujuan agar siswa mampu membangun website sederhana menggunakan WordPress, memahami struktur CMS, serta menghasilkan produk digital nyata berupa website kelompok yang fungsional dan memiliki identitas visual yang jelas.
+                  </div>
+                </div>
+                <div class="ar-item ar-item--kendala">
+                  <div class="ar-item-header">
+                    <span class="ar-icon"><i class="fa-solid fa-triangle-exclamation"></i></span>
+                    <span class="ar-label">3. Kendala</span>
+                  </div>
+                  <div class="ar-content">
+                    <ul class="ar-list">
+                      <li>Banyak kendala teknis tak terduga saat instalasi Laragon dan WordPress: error konfigurasi port, perbedaan spesifikasi perangkat keras, dan ketidaksesuaian versi sistem operasi menyebabkan troubleshooting satu per satu menyita sebagian besar waktu pembelajaran.</li>
+                      <li>Target utama pembelajaran  membuat Post dan Page di WordPress  tidak tercapai karena waktu habis untuk menangani masalah teknis.</li>
+                      <li>Suasana kerja kelompok kurang kondusif: beberapa kelompok mulai ribut, saling memanggil antarkelompok, dan kehilangan fokus saat guru berkonsentrasi pada troubleshooting perangkat.</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="ar-item ar-item--teori">
+                  <div class="ar-item-header">
+                    <span class="ar-icon"><i class="fa-solid fa-book-open-reader"></i></span>
+                    <span class="ar-label">4. Teori Pedagogi</span>
+                  </div>
+                  <div class="ar-content">
+                    Pembelajaran dirancang menggunakan pendekatan <strong>Project-Based Learning (PjBL)</strong>  siswa belajar dengan mengerjakan proyek nyata. Konsep <em>learning by doing</em> (John Dewey) menjadi landasan utama: siswa tidak hanya menerima materi, tetapi langsung mempraktikkan dan menghasilkan karya. Kerangka <strong>TPACK</strong> (Technological Pedagogical Content Knowledge) digunakan untuk mengintegrasikan konten WordPress ke dalam strategi pembelajaran yang efektif.
+                  </div>
+                </div>
+                <div class="ar-item ar-item--kelebihan">
+                  <div class="ar-item-header">
+                    <span class="ar-icon"><i class="fa-solid fa-circle-check"></i></span>
+                    <span class="ar-label">5. Kelebihan Artefak</span>
+                  </div>
+                  <div class="ar-content">
+                    <ul class="ar-list ar-list--plus">
+                      <li>Produk belajar bersifat nyata dan dapat langsung diakses secara online.</li>
+                      <li>Materi sangat relevan dengan kebutuhan industri digital saat ini.</li>
+                      <li>Mendorong kolaborasi dan pembagian peran antar anggota kelompok.</li>
+                      <li>Siswa terlihat antusias karena hasil kerja mereka berwujud dan dapat ditampilkan.</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="ar-item ar-item--kekurangan">
+                  <div class="ar-item-header">
+                    <span class="ar-icon"><i class="fa-solid fa-circle-xmark"></i></span>
+                    <span class="ar-label">6. Kekurangan Artefak</span>
+                  </div>
+                  <div class="ar-content">
+                    <ul class="ar-list ar-list--minus">
+                      <li>Instruksi LKPD pada langkah instalasi plugin masih perlu diperjelas dengan tangkapan layar panduan.</li>
+                      <li>Alokasi waktu untuk sesi orientasi WordPress kurang sehingga beberapa kelompok tertinggal.</li>
+                      <li>Rubrik asesmen belum memuat indikator estetika dan keterbacaan konten secara spesifik.</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="ar-item ar-item--faktor">
+                  <div class="ar-item-header">
+                    <span class="ar-icon"><i class="fa-solid fa-star"></i></span>
+                    <span class="ar-label">7. Faktor Keberhasilan</span>
+                  </div>
+                  <div class="ar-content">
+                    Siswa yang berhasil menyelesaikan instalasi Laragon menunjukkan antusiasme tinggi dan segera ingin mencoba tahap berikutnya  antusiasme ini menjadi modal positif yang terus dikembangkan di siklus berikutnya. Bimbingan pasca-siklus dari Guru Pamong memberikan arah perbaikan yang konkret: pentingnya panduan visual langkah-demi-langkah dan sistem tutor sebaya agar beban troubleshooting tidak hanya bertumpu pada guru.
+                  </div>
+                </div>
+                <div class="ar-item ar-item--adaptasi">
+                  <div class="ar-item-header">
+                    <span class="ar-icon"><i class="fa-solid fa-arrows-rotate"></i></span>
+                    <span class="ar-label">8. Adaptasi untuk Kelas Lain</span>
+                  </div>
+                  <div class="ar-content">
+                    <ul class="ar-list">
+                      <li><strong>Kelas kemampuan rendah:</strong> Materi dibuat lebih bertahap dengan panduan langkah-per-langkah bergambar dan praktik offline menggunakan XAMPP/localhost sebelum hosting.</li>
+                      <li><strong>Fasilitas terbatas:</strong> Praktik dilakukan secara berkelompok dengan berbagi satu perangkat, atau menggunakan demo berbasis video interaktif.</li>
+                      <li><strong>Kelas lebih maju:</strong> Proyek diperluas dengan penambahan fitur e-commerce menggunakan WooCommerce dan optimasi SEO dasar.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- PENILAIAN GP -->
+            <!-- REFLEKSI SIKLUS 1 -->
+            <div class="artefak-category-label">
+              <i class="fa-solid fa-comments"></i> Refleksi Pembelajaran Siklus 1
+            </div>
+            <div class="refleksi-block fade-in">
+              <div class="refleksi-subhead"><i class="fa-solid fa-chalkboard-user"></i> A. Refleksi Kegiatan Praktik Pembelajaran Terbimbing</div>
+              <details class="refleksi-item">
+                <summary>
+                  <span class="refleksi-q-num">A1</span>
+                  <span class="refleksi-q-text">Bagaimana kegiatan apersepsi membantu murid memahami tujuan pembelajaran yang akan dicapai?</span>
+                  <i class="fa-solid fa-chevron-down refleksi-chevron"></i>
+                </summary>
+                <div class="refleksi-answer">
+                  <p>Pada Siklus 1 (Modul Pemrograman Website / WordPress), kegiatan apersepsi yang saya lakukan belum berjalan secara optimal. Saya membuka pembelajaran dengan pertanyaan pemantik tentang apa yang siswa ketahui mengenai website dan CMS, namun respons yang muncul masih sangat terbatas. Banyak siswa terlihat bingung dan belum mampu mengaitkan konsep CMS yang bersifat teori dengan praktik nyata membuat sebuah website yang utuh.</p>
+                  <p>Penjelasan awal yang saya sampaikan masih terlalu teoritis dan berpusat pada definisi, sehingga siswa belum mendapatkan gambaran konkret mengenai apa yang akan mereka capai. Tujuan pembelajaran  membuat website fungsional berbasis WordPress  belum berhasil dikomunikasikan secara jelas dan menarik, sehingga motivasi awal siswa kurang terbangkitkan.</p>
+                </div>
+              </details>
+              <details class="refleksi-item">
+                <summary>
+                  <span class="refleksi-q-num">A2</span>
+                  <span class="refleksi-q-text">Kegiatan apa saja yang berhasil dan belum berhasil dilaksanakan dalam kegiatan inti?</span>
+                  <i class="fa-solid fa-chevron-down refleksi-chevron"></i>
+                </summary>
+                <div class="refleksi-answer">
+                  <p>Kegiatan yang berhasil dilaksanakan adalah proses instalasi Laragon di beberapa perangkat siswa serta pemahaman tentang konsep dasar localhost dan cara kerja server lokal. Siswa yang berhasil mengikuti langkah ini tampak antusias dan ingin segera mencoba tahap berikutnya.</p>
+                  <p>Namun, instalasi WordPress di setiap laptop belum berhasil dilaksanakan secara merata. Muncul banyak kendala teknis tak terduga seperti error pengaturan port, perbedaan spesifikasi perangkat, dan ketidaksesuaian versi sistem operasi. Waktu banyak terbuang untuk troubleshooting satu per satu, sehingga target membuat Post dan Page di WordPress tidak tercapai. Saat kerja kelompok, sejumlah kelompok mulai ribut dan tidak fokus, sehingga saya harus membagi perhatian antara troubleshooting teknis dan pengelolaan ketertiban kelas.</p>
+                </div>
+              </details>
+              <details class="refleksi-item">
+                <summary>
+                  <span class="refleksi-q-num">A3</span>
+                  <span class="refleksi-q-text">Seberapa efektif penggunaan media pembelajaran untuk melibatkan partisipasi aktif di kelas?</span>
+                  <i class="fa-solid fa-chevron-down refleksi-chevron"></i>
+                </summary>
+                <div class="refleksi-answer">
+                  <p>Media yang saya gunakan, yakni modul PDF dan tampilan layar proyektor, kurang efektif mendorong partisipasi aktif. Tempo demonstrasi yang terlalu cepat membuat banyak siswa tertinggal dan kehilangan langkah penting. Tidak adanya video tutorial membuat siswa yang tertinggal tidak dapat mengulang sendiri tahap yang terlewat.</p>
+                  <p>Modul PDF yang statis dan padat teks juga kurang menarik bagi siswa SMK yang lebih responsif terhadap media visual interaktif. Akibatnya, saat kerja kelompok dimulai, banyak siswa tidak tahu harus melakukan apa, yang memicu kebingungan kolektif di dalam kelompok.</p>
+                </div>
+              </details>
+              <details class="refleksi-item">
+                <summary>
+                  <span class="refleksi-q-num">A4</span>
+                  <span class="refleksi-q-text">Bagaimana reaksi/respon murid dalam setiap kegiatan dari pembukaan hingga penutupan pembelajaran?</span>
+                  <i class="fa-solid fa-chevron-down refleksi-chevron"></i>
+                </summary>
+                <div class="refleksi-answer">
+                  <p>Pada pembukaan, siswa cukup antusias dan penasaran dengan materi WordPress yang dianggap baru. Namun keantusiasan memudar di pertengahan kegiatan inti ketika kendala teknis bermunculan. Banyak siswa frustrasi saat laptop mereka tidak berhasil menjalankan konfigurasi seperti demonstrasi.</p>
+                  <p>Suasana kerja kelompok menjadi kurang kondusif; beberapa siswa menyerah dan hanya menunggu temannya. Pada penutupan, saya belum sempat melakukan refleksi dan umpan balik yang memadai karena waktu habis untuk menangani masalah teknis. Secara keseluruhan, persiapan teknis dan strategi pengelolaan kelas perlu diperbaiki secara signifikan.</p>
+                </div>
+              </details>
+              <div class="refleksi-subhead"><i class="fa-solid fa-comment-dots"></i> B. Refleksi Pengalaman Belajar</div>
+              <details class="refleksi-item">
+                <summary>
+                  <span class="refleksi-q-num">B1</span>
+                  <span class="refleksi-q-text">Apa umpan balik dari Guru Pamong untuk praktik pembelajaran terbimbing yang lebih baik?</span>
+                  <i class="fa-solid fa-chevron-down refleksi-chevron"></i>
+                </summary>
+                <div class="refleksi-answer">
+                  <p>Guru Pamong menyampaikan bahwa saya perlu meningkatkan kemampuan membaca situasi kelas dan merespons cepat ketika kondisi mulai tidak kondusif. Beliau menegaskan bahwa keributan saat kerja kelompok mencerminkan kurangnya struktur dan aturan yang jelas.</p>
+                  <p>Beliau menyarankan agar saya merancang tata tertib kerja kelompok yang eksplisit (larangan berpindah meja, batasan suara, pembagian peran), menyiapkan panduan visual langkah-demi-langkah yang lebih terstruktur, serta menerapkan metode tutor sebaya agar beban troubleshooting tidak hanya bertumpu pada guru.</p>
+                </div>
+              </details>
+              <details class="refleksi-item">
+                <summary>
+                  <span class="refleksi-q-num">B2</span>
+                  <span class="refleksi-q-text">Unsur apa yang akan Anda ubah agar metode pembelajaran menjadi lebih baik?</span>
+                  <i class="fa-solid fa-chevron-down refleksi-chevron"></i>
+                </summary>
+                <div class="refleksi-answer">
+                  <p>Pertama, merancang peraturan kerja kelompok yang jelas dan disosialisasikan di awal sesi (batas suara, larangan berpindah tempat, pembagian peran: ketua, notulen, teknisi). Kedua, mengganti modul PDF statis dengan panduan visual bergambar atau video tutorial pendek yang dapat diakses mandiri melalui QR code.</p>
+                  <p>Ketiga, menerapkan sistem tutor sebaya terstruktur dengan menunjuk asisten kelompok dari siswa berprestasi. Keempat, menyiapkan skenario troubleshooting umum secara tertulis agar tidak menghabiskan waktu. Kelima, menyesuaikan tempo demonstrasi dengan kemampuan rata-rata kelas, bukan siswa yang paling cepat.</p>
+                </div>
+              </details>
+            </div>
+
+            <div class="artefak-category-label">
+              <i class="fa-solid fa-star-half-stroke"></i> Penilaian GP
+              (Lampiran 7 & 8)
+            </div>
+            <div class="penilaian-row">
+              <button
+                class="penilaian-chip"
+                type="button"
+                data-modal="pdf"
+                data-src="https://drive.google.com/file/d/1LabBmaZvW4KjFIMBeqZTVypE21H9pgaV/preview"
+                data-title="Lampiran 7 – Perangkat Pembelajaran"
+              >
+                <i class="fa-solid fa-file-lines"></i> Lampiran 7 – Perangkat
+                Pembelajaran
+              </button>
+              <button
+                class="penilaian-chip penilaian-chip--alt"
+                type="button"
+                data-modal="pdf"
+                data-src="https://drive.google.com/file/d/12u63FXyfL7syS66QpG4frjqdkc4l2JIj/preview"
+                data-title="Lampiran 8 – Praktik Mengajar"
+              >
+                <i class="fa-solid fa-chalkboard-user"></i> Lampiran 8 – Praktik
+                Mengajar
+              </button>
+            </div>
+          </div>
+
+          <!-- PANEL SIKLUS 2 -->
+          <div class="siklus-panel" id="siklus-panel-2" role="tabpanel" hidden>
+            <div class="siklus-panel-header">
+              <div class="siklus-badge s2">S2</div>
+              <div>
+                <h3 class="siklus-panel-title">Siklus 2</h3>
+                <p class="siklus-panel-sub">Pertemuan 5 – 8 · 2 Modul Ajar</p>
+              </div>
+            </div>
+
+            <div class="artefak-category-label">
+              <i class="fa-solid fa-book"></i> Modul Ajar
+            </div>
+            <div class="modul-list">
+              <div class="modul-item">
+                <div class="modul-item-badge">M-01</div>
+                <div class="modul-item-body">
+                  <div class="modul-item-title">Informatika: Search Engine</div>
+                  <div class="modul-item-desc">
+                    Pertemuan 5–6 · Cara kerja mesin pencari dan strategi
+                    penelusuran efektif
+                  </div>
+                </div>
+              </div>
+              <div class="modul-item">
+                <div class="modul-item-badge">M-02</div>
+                <div class="modul-item-body">
+                  <div class="modul-item-title">Informatika: Media Digital</div>
+                  <div class="modul-item-desc">
+                    Pertemuan 7–8 · Literasi media, konten digital, dan etika
+                    penggunaan
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="artefak-category-label">
+              <i class="fa-solid fa-photo-film"></i> Media Ajar
+            </div>
+            <div class="media-chip-row">
+              <a
+                class="media-chip media-chip--ppt"
+                href="#media-ajar"
+                data-modal="pdf"
+                data-src="https://drive.google.com/file/d/1VaXxrvG-56YY5EGuRXZSYbArpwKtwSDK/preview"
+                data-title="PPT Media Digital 1 – Siklus 2"
+              >
+                <i class="fa-solid fa-file-powerpoint"></i> PPT Media Digital 1
+              </a>
+              <a
+                class="media-chip media-chip--ppt"
+                href="#media-ajar"
+                data-modal="pdf"
+                data-src="https://drive.google.com/file/d/196BuPdiQ0j0lAJoFRGMxi_VLGzraLCf6/preview"
+                data-title="PPT Media Digital 2 – Siklus 2"
+              >
+                <i class="fa-solid fa-file-powerpoint"></i> PPT Media Digital 2
+              </a>
+              <a
+                class="media-chip media-chip--doc"
+                href="#media-ajar"
+                data-modal="pdf"
+                data-src="https://drive.google.com/file/d/1HVihJf2SwBJ4LomIbsH3FZGy_AnsaUtK/preview"
+                data-title="Modul Ajar Search Engine – Siklus 2"
+              >
+                <i class="fa-solid fa-file-pdf"></i> Modul Search Engine
+              </a>
+              <a
+                class="media-chip media-chip--doc"
+                href="#media-ajar"
+                data-modal="pdf"
+                data-src="https://drive.google.com/file/d/1b7ULK5q7LfnGRK0LuEQfkrtZwU9x6QU2/preview"
+                data-title="Modul Ajar Literasi Digital – Siklus 2"
+              >
+                <i class="fa-solid fa-file-pdf"></i> Modul Literasi Digital
+              </a>
+            </div>
+
+            <div class="artefak-category-label">
+              <i class="fa-solid fa-clipboard-check"></i> LKPD & Hasil Kerja
+              Siswa
+            </div>
+            <div class="lkpd-grid">
+              <div class="lkpd-card">
+                <div class="lkpd-icon">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <div class="lkpd-title">Laporan Penelusuran Web</div>
+                <div class="lkpd-desc">
+                  Siswa mendokumentasikan strategi penelusuran, hasil temuan,
+                  dan evaluasi sumber informasi.
+                </div>
+              </div>
+              <div class="lkpd-card">
+                <div class="lkpd-icon"><i class="fa-solid fa-image"></i></div>
+                <div class="lkpd-title">Produk Konten Digital</div>
+                <div class="lkpd-desc">
+                  Siswa membuat infografis atau poster digital bertema media dan
+                  etika digital.
+                </div>
+              </div>
+            </div>
+
+            <!-- ANALISIS & REFLEKSI SIKLUS 2 -->
+            <div class="artefak-category-label">
+              <i class="fa-solid fa-magnifying-glass-chart"></i> Analisis &amp; Refleksi Artefak Siklus 2
+            </div>
+            <div class="analisis-refleksi-block fade-in">
+              <div class="ar-grid">
+                <div class="ar-item ar-item--konteks">
+                  <div class="ar-item-header">
+                    <span class="ar-icon"><i class="fa-solid fa-map-location-dot"></i></span>
+                    <span class="ar-label">1. Konteks</span>
+                  </div>
+                  <div class="ar-content">
+                    Siklus 2 dilaksanakan pada pertemuan 5–8 dengan materi <em>Search Engine</em> dan <em>Media Digital</em>. Pada tahap ini siswa sudah lebih terbiasa dengan suasana belajar bersama penulis, dan kelas mulai menunjukkan keaktifan lebih tinggi. Artefak dirancang untuk mengalihkan fokus dari praktik teknis ke literasi informasi dan berpikir kritis terhadap konten digital.
+                  </div>
+                </div>
+                <div class="ar-item ar-item--tujuan">
+                  <div class="ar-item-header">
+                    <span class="ar-icon"><i class="fa-solid fa-bullseye"></i></span>
+                    <span class="ar-label">2. Tujuan</span>
+                  </div>
+                  <div class="ar-content">
+                    Modul ajar bertujuan agar siswa mampu memahami cara kerja mesin pencari, menerapkan strategi penelusuran efektif, dan mengidentifikasi konten digital yang valid serta beretika. Produk akhir berupa laporan penelusuran dan infografis/poster digital hasil karya siswa.
+                  </div>
+                </div>
+                <div class="ar-item ar-item--kendala">
+                  <div class="ar-item-header">
+                    <span class="ar-icon"><i class="fa-solid fa-triangle-exclamation"></i></span>
+                    <span class="ar-label">3. Kendala</span>
+                  </div>
+                  <div class="ar-content">
+                    <ul class="ar-list">
+                      <li>Antusiasme siswa yang berlebihan justru mengganggu manajemen waktu: beberapa kelompok terlibat perdebatan desain yang panjang, anggota berpindah meja untuk melihat hasil kelompok lain, dan tingkat kebisingan kelas meningkat tajam.</li>
+                      <li>Manajemen waktu kerja kelompok yang kurang ketat menyebabkan sejumlah kelompok terlambat menyelesaikan dan mengumpulkan LKPD tepat waktu.</li>
+                      <li>Sesi refleksi bersama dan pemberian umpan balik pada penutupan tidak dapat dilakukan secara optimal karena waktu terserap habis oleh kerja kelompok.</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="ar-item ar-item--teori">
+                  <div class="ar-item-header">
+                    <span class="ar-icon"><i class="fa-solid fa-book-open-reader"></i></span>
+                    <span class="ar-label">4. Teori Pedagogi</span>
+                  </div>
+                  <div class="ar-content">
+                    Siklus ini mengadopsi pendekatan <strong>Student-Centered Learning</strong> dan prinsip dialog Paulo Freire  kelas dirancang sebagai ruang diskusi aktif, bukan transmisi satu arah. <strong>Pembelajaran Berdiferensiasi</strong> diterapkan dengan memberikan tugas laporan penelusuran dengan tingkat kompleksitas yang dapat disesuaikan kemampuan siswa.
+                  </div>
+                </div>
+                <div class="ar-item ar-item--kelebihan">
+                  <div class="ar-item-header">
+                    <span class="ar-icon"><i class="fa-solid fa-circle-check"></i></span>
+                    <span class="ar-label">5. Kelebihan Artefak</span>
+                  </div>
+                  <div class="ar-content">
+                    <ul class="ar-list ar-list--plus">
+                      <li>Materi sangat dekat dengan kehidupan sehari-hari siswa sehingga relevansi terasa langsung.</li>
+                      <li>Tugas infografis mendorong kreativitas dan kemampuan visual komunikasi siswa.</li>
+                      <li>Diskusi kelas berlangsung lebih hidup karena topik media digital bersifat kontekstual dan personal.</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="ar-item ar-item--kekurangan">
+                  <div class="ar-item-header">
+                    <span class="ar-icon"><i class="fa-solid fa-circle-xmark"></i></span>
+                    <span class="ar-label">6. Kekurangan Artefak</span>
+                  </div>
+                  <div class="ar-content">
+                    <ul class="ar-list ar-list--minus">
+                      <li>LKPD laporan penelusuran perlu dilengkapi panduan evaluasi sumber (kriteria kredibilitas sumber) yang lebih eksplisit.</li>
+                      <li>Asesmen infografis belum mencakup indikator kedalaman analisis, hanya aspek estetika dan kelengkapan konten.</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="ar-item ar-item--faktor">
+                  <div class="ar-item-header">
+                    <span class="ar-icon"><i class="fa-solid fa-star"></i></span>
+                    <span class="ar-label">7. Faktor Keberhasilan</span>
+                  </div>
+                  <div class="ar-content">
+                    Penggunaan contoh kasus nyata (berita hoaks viral) sebagai pemantik apersepsi terbukti efektif membangkitkan keterlibatan seluruh siswa sejak awal. Platform Canva dan situs cek fakta sebagai media kreatif berhasil menghadirkan pengalaman belajar yang hands-on dan bermakna  hampir seluruh kelas terlibat aktif dalam mencari, mengevaluasi, dan mendesain konten digital. Peningkatan ini menjadi bukti nyata bahwa media yang kontekstual dan dekat dengan kehidupan siswa adalah kunci keterlibatan belajar yang tinggi.
+                  </div>
+                </div>
+                <div class="ar-item ar-item--adaptasi">
+                  <div class="ar-item-header">
+                    <span class="ar-icon"><i class="fa-solid fa-arrows-rotate"></i></span>
+                    <span class="ar-label">8. Adaptasi untuk Kelas Lain</span>
+                  </div>
+                  <div class="ar-content">
+                    <ul class="ar-list">
+                      <li><strong>Kelas kemampuan rendah:</strong> Sederhanakan tugas laporan menjadi format tabel isian dengan panduan pertanyaan terpandu.</li>
+                      <li><strong>Fasilitas terbatas:</strong> Tugas infografis dapat diganti dengan poster manual bertema media digital.</li>
+                      <li><strong>Kelas lebih maju:</strong> Siswa diminta memproduksi mini-podcast atau video edukasi tentang etika digital sebagai produk akhir.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- REFLEKSI SIKLUS 2 -->
+            <div class="artefak-category-label">
+              <i class="fa-solid fa-comments"></i> Refleksi Pembelajaran Siklus 2
+            </div>
+            <div class="refleksi-block fade-in">
+              <div class="refleksi-subhead"><i class="fa-solid fa-chalkboard-user"></i> A. Refleksi Kegiatan Praktik Pembelajaran Terbimbing</div>
+              <details class="refleksi-item">
+                <summary>
+                  <span class="refleksi-q-num">A1</span>
+                  <span class="refleksi-q-text">Bagaimana kegiatan apersepsi membantu murid memahami tujuan pembelajaran yang akan dicapai?</span>
+                  <i class="fa-solid fa-chevron-down refleksi-chevron"></i>
+                </summary>
+                <div class="refleksi-answer">
+                  <p>Pada Siklus 2 (Modul Search Engine &amp; Media Digital), apersepsi meningkat signifikan dibanding siklus pertama. Saya membuka pembelajaran dengan menampilkan contoh nyata berita hoaks yang viral, lalu mengaitkannya dengan pentingnya literasi digital dan kemampuan mencari informasi akurat menggunakan search engine.</p>
+                  <p>Pendekatan ini jauh lebih efektif membangkitkan rasa ingin tahu. Hampir seluruh siswa langsung terlibat aktif dalam diskusi pembuka karena topiknya relevan dengan kehidupan sehari-hari. Tujuan pembelajaran berhasil dikomunikasikan secara konkret dan bermakna, sehingga motivasi siswa lebih kuat.</p>
+                </div>
+              </details>
+              <details class="refleksi-item">
+                <summary>
+                  <span class="refleksi-q-num">A2</span>
+                  <span class="refleksi-q-text">Kegiatan apa saja yang berhasil dan belum berhasil dilaksanakan dalam kegiatan inti?</span>
+                  <i class="fa-solid fa-chevron-down refleksi-chevron"></i>
+                </summary>
+                <div class="refleksi-answer">
+                  <p>Sesi diskusi kelompok untuk mencari literatur digital menggunakan Google Operators dan evaluasi keabsahan informasi melalui situs cek fakta berjalan baik  siswa sangat aktif. Penggunaan Canva untuk membuat konten digital juga disambut antusias.</p>
+                  <p>Namun muncul hambatan baru: saat kerja kelompok, kelas kembali ribut, tetapi dengan karakter berbeda. Jika siklus 1 dipicu kebingungan, siklus 2 dipicu antusiasme berlebih. Beberapa kelompok berdebat desain terlalu lama, saling memanggil, bahkan berpindah meja untuk melihat hasil kelompok lain. Manajemen waktu terganggu dan sejumlah kelompok terlambat mengumpulkan LKPD.</p>
+                </div>
+              </details>
+              <details class="refleksi-item">
+                <summary>
+                  <span class="refleksi-q-num">A3</span>
+                  <span class="refleksi-q-text">Seberapa efektif penggunaan media pembelajaran untuk melibatkan partisipasi aktif di kelas?</span>
+                  <i class="fa-solid fa-chevron-down refleksi-chevron"></i>
+                </summary>
+                <div class="refleksi-answer">
+                  <p>Penggunaan media meningkat signifikan. Canva sebagai media kreatif dan situs cek fakta sebagai media evaluasi informasi terbukti efektif meningkatkan keterlibatan. Hampir seluruh kelas terlibat langsung dalam mencari, mengevaluasi, dan mendesain konten digital  jauh lebih hands-on dibanding siklus 1.</p>
+                  <p>Meski demikian, efektivitas media yang tinggi membawa tantangan: siswa terlalu asyik dengan platform sehingga kehilangan kesadaran batas waktu. Dibutuhkan strategi manajemen waktu yang lebih tegas agar antusiasme dapat diarahkan secara produktif tanpa mengorbankan ketuntasan tugas.</p>
+                </div>
+              </details>
+              <details class="refleksi-item">
+                <summary>
+                  <span class="refleksi-q-num">A4</span>
+                  <span class="refleksi-q-text">Bagaimana reaksi/respon murid dalam setiap kegiatan dari pembukaan hingga penutupan pembelajaran?</span>
+                  <i class="fa-solid fa-chevron-down refleksi-chevron"></i>
+                </summary>
+                <div class="refleksi-answer">
+                  <p>Respons siswa pada siklus 2 jauh lebih positif. Dari pembukaan hingga akhir, mayoritas siswa terlibat aktif dan tidak ada yang menyerah. Semangat kolaborasi meningkat.</p>
+                  <p>Tantangannya adalah mengelola energi positif yang berlebihan. Saat kerja kelompok, beberapa kelompok sangat ribut, anggota bergerak bebas antar meja, dan kebisingan kelas meningkat tajam sehingga mengganggu kelompok lain. Karena waktu habis akibat manajemen yang kurang ketat, sesi refleksi dan umpan balik pada penutupan belum optimal.</p>
+                </div>
+              </details>
+              <div class="refleksi-subhead"><i class="fa-solid fa-comment-dots"></i> B. Refleksi Pengalaman Belajar</div>
+              <details class="refleksi-item">
+                <summary>
+                  <span class="refleksi-q-num">B1</span>
+                  <span class="refleksi-q-text">Apa umpan balik dari Guru Pamong untuk praktik pembelajaran terbimbing yang lebih baik?</span>
+                  <i class="fa-solid fa-chevron-down refleksi-chevron"></i>
+                </summary>
+                <div class="refleksi-answer">
+                  <p>Guru Pamong mengapresiasi peningkatan nyata dari siklus 1 ke siklus 2  keterlibatan dan antusiasme kelas meningkat, metode lebih variatif dan relevan. Namun beliau menegaskan bahwa mengendalikan ketertiban kelas saat diskusi bebas dan kerja kelompok adalah kompetensi yang tidak boleh diabaikan.</p>
+                  <p>Beliau menyarankan menerapkan sistem time-keeper di tiap kelompok, memberikan sinyal visual atau bunyi sebagai penanda waktu, serta menetapkan aturan posisi duduk yang ketat agar siswa tidak berkeliaran. Manajemen waktu tiap fase juga perlu dipertegas dengan batas waktu yang tertulis di papan tulis.</p>
+                </div>
+              </details>
+              <details class="refleksi-item">
+                <summary>
+                  <span class="refleksi-q-num">B2</span>
+                  <span class="refleksi-q-text">Unsur apa yang akan Anda ubah agar metode pembelajaran menjadi lebih baik?</span>
+                  <i class="fa-solid fa-chevron-down refleksi-chevron"></i>
+                </summary>
+                <div class="refleksi-answer">
+                  <p>Pertama, menetapkan peran time-keeper di setiap kelompok sebagai tanggung jawab resmi yang dinilai. Kedua, menuliskan batas waktu setiap fase di papan tulis atau layar proyektor agar dapat dipantau visual oleh seluruh kelas. Ketiga, membuat kontrak kelompok sederhana di awal sesi berisi kesepakatan batas suara dan larangan berpindah tempat.</p>
+                  <p>Keempat, menyiapkan tanda/sinyal (ketukan meja atau lampu proyektor dipadamkan sesaat) sebagai penanda waktu kerja kelompok hampir habis. Kelima, memastikan waktu refleksi dan penutupan tidak terkorbankan dengan memasukkannya sebagai bagian terstruktur dalam alur pembelajaran.</p>
+                </div>
+              </details>
+            </div>
+
+            <div class="artefak-category-label">
+              <i class="fa-solid fa-star-half-stroke"></i> Penilaian GP
+              (Lampiran 7 & 8)
+            </div>
+            <div class="penilaian-row">
+              <button
+                class="penilaian-chip"
+                type="button"
+                data-modal="pdf"
+                data-src="https://drive.google.com/file/d/1KKsbToMggvGRE7wGRJV5BdwULajI0IQH/preview"
+                data-title="Lampiran 7 – Perangkat Pembelajaran"
+              >
+                <i class="fa-solid fa-file-lines"></i> Lampiran 7 – Perangkat
+                Pembelajaran
+              </button>
+              <button
+                class="penilaian-chip penilaian-chip--alt"
+                type="button"
+                data-modal="pdf"
+                data-src="https://drive.google.com/file/d/1EKvgHjc-jhiFlylXvV_p4bI-yS8qrtIg/preview"
+                data-title="Lampiran 8 – Praktik Mengajar"
+              >
+                <i class="fa-solid fa-chalkboard-user"></i> Lampiran 8 – Praktik
+                Mengajar
+              </button>
+            </div>
+          </div>
+
+          <!-- PANEL SIKLUS 3 -->
+          <div class="siklus-panel" id="siklus-panel-3" role="tabpanel" hidden>
+            <div class="siklus-panel-header">
+              <div class="siklus-badge s3">S3</div>
+              <div>
+                <h3 class="siklus-panel-title">Siklus 3</h3>
+                <p class="siklus-panel-sub">Pertemuan 9 – 12 · 2 Modul Ajar</p>
+              </div>
+            </div>
+
+            <div class="artefak-category-label">
+              <i class="fa-solid fa-book"></i> Modul Ajar
+            </div>
+            <div class="modul-list">
+              <div class="modul-item">
+                <div class="modul-item-badge">M-01</div>
+                <div class="modul-item-body">
+                  <div class="modul-item-title">
+                    Informatika: Aplikasi Perkantoran (Microsoft Office)
+                  </div>
+                  <div class="modul-item-desc">
+                    Pertemuan 9–10 · Praktik Microsoft Word, Excel, dan
+                    PowerPoint sebagai bekal dunia kerja
+                  </div>
+                </div>
+              </div>
+              <div class="modul-item">
+                <div class="modul-item-badge">M-02</div>
+                <div class="modul-item-body">
+                  <div class="modul-item-title">
+                    Informatika: Hak Atas Kekayaan Intelektual
+                  </div>
+                  <div class="modul-item-desc">
+                    Pertemuan 11–12 · HKI, hak cipta digital, dan perlindungan
+                    karya di era internet
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="artefak-category-label">
+              <i class="fa-solid fa-photo-film"></i> Media Ajar
+            </div>
+            <div class="media-chip-row">
+              <a
+                class="media-chip media-chip--ppt"
+                href="#media-ajar"
+                data-modal="pdf"
+                data-src="https://docs.google.com/presentation/d/1z8G0T21qv993rc4a8wZARt-jl3Zqq88B/preview"
+                data-title="PPT Word – Siklus 3"
+              >
+                <i class="fa-solid fa-file-powerpoint"></i> PPT Word
+              </a>
+              <a
+                class="media-chip media-chip--ppt"
+                href="#media-ajar"
+                data-modal="pdf"
+                data-src="https://docs.google.com/presentation/d/1gPNS__ainisDWOEhn2XfvvmBpWNWWyO_/preview"
+                data-title="PPT Excel – Siklus 3"
+              >
+                <i class="fa-solid fa-file-powerpoint"></i> PPT Excel
+              </a>
+              <a
+                class="media-chip media-chip--ppt"
+                href="#media-ajar"
+                data-modal="pdf"
+                data-src="https://docs.google.com/presentation/d/1VMhsu_799QHVf47roxeiUhoI8EDk7smn/preview"
+                data-title="PPT PowerPoint – Siklus 3"
+              >
+                <i class="fa-solid fa-file-powerpoint"></i> PPT PowerPoint
+              </a>
+              <a
+                class="media-chip media-chip--ppt"
+                href="#media-ajar"
+                data-modal="pdf"
+                data-src="https://docs.google.com/presentation/d/1vtZsxaAWXlOhOvp4KDWJiSvc74uY_N06/preview"
+                data-title="PPT HAKI – Siklus 3"
+              >
+                <i class="fa-solid fa-file-powerpoint"></i> PPT HAKI
+              </a>
+              <a
+                class="media-chip media-chip--doc"
+                href="#media-ajar"
+                data-modal="pdf"
+                data-src="https://drive.google.com/file/d/19CNQNTOtaWEmdIMty7UU1d3JoTeJihAM/preview"
+                data-title="Modul Ajar Teknologi Digital – Siklus 3"
+              >
+                <i class="fa-solid fa-file-pdf"></i> Modul Teknologi Digital
+              </a>
+              <a
+                class="media-chip media-chip--doc"
+                href="#media-ajar"
+                data-modal="pdf"
+                data-src="https://drive.google.com/file/d/19mIZIiBA4j5YGf_IkJ10hhKp3lZH_GBU/preview"
+                data-title="Modul Ajar HAKI – Siklus 3"
+              >
+                <i class="fa-solid fa-file-pdf"></i> Modul HAKI
+              </a>
+            </div>
+
+            <div class="artefak-category-label">
+              <i class="fa-solid fa-clipboard-check"></i> LKPD & Hasil Kerja
+              Siswa
+            </div>
+            <div class="lkpd-grid">
+              <div class="lkpd-card">
+                <div class="lkpd-icon">
+                  <i class="fa-solid fa-file-word"></i>
+                </div>
+                <div class="lkpd-title">Praktik Dokumen & Presentasi</div>
+                <div class="lkpd-desc">
+                  Siswa membuat dokumen, mengolah data, dan menyusun presentasi
+                  menggunakan Microsoft Word, Excel, dan PowerPoint.
+                </div>
+              </div>
+              <div class="lkpd-card">
+                <div class="lkpd-icon">
+                  <i class="fa-solid fa-scale-balanced"></i>
+                </div>
+                <div class="lkpd-title">Studi Kasus HKI</div>
+                <div class="lkpd-desc">
+                  Siswa mengidentifikasi kasus pelanggaran hak cipta dan
+                  merumuskan solusi berdasarkan regulasi yang berlaku.
+                </div>
+              </div>
+            </div>
+
+            <!-- ANALISIS & REFLEKSI SIKLUS 3 -->
+            <div class="artefak-category-label">
+              <i class="fa-solid fa-magnifying-glass-chart"></i> Analisis &amp; Refleksi Artefak Siklus 3
+            </div>
+            <div class="analisis-refleksi-block fade-in">
+              <div class="ar-grid">
+                <div class="ar-item ar-item--konteks">
+                  <div class="ar-item-header">
+                    <span class="ar-icon"><i class="fa-solid fa-map-location-dot"></i></span>
+                    <span class="ar-label">1. Konteks</span>
+                  </div>
+                  <div class="ar-content">
+                    Siklus 3 dilaksanakan pada pertemuan 9–12 dengan materi <em>Aplikasi Perkantoran (Microsoft Office)</em> dan <em>Hak Atas Kekayaan Intelektual (HAKI)</em>. Pada tahap akhir ini siswa sudah terbiasa dengan ritme belajar, sehingga fokus diarahkan pada penguatan keterampilan praktis perkantoran sekaligus penalaran etis terhadap orisinalitas karya dan hak cipta di ranah digital.
+                  </div>
+                </div>
+                <div class="ar-item ar-item--tujuan">
+                  <div class="ar-item-header">
+                    <span class="ar-icon"><i class="fa-solid fa-bullseye"></i></span>
+                    <span class="ar-label">2. Tujuan</span>
+                  </div>
+                  <div class="ar-content">
+                    Modul ajar bertujuan agar siswa mampu menggunakan Microsoft Word, Excel, dan PowerPoint untuk menghasilkan dokumen, olah data, dan presentasi yang baik, serta memahami konsep HAKI dan hak cipta digital. Produk akhir berupa dokumen/presentasi karya siswa dan studi kasus pelanggaran hak cipta beserta solusinya.
+                  </div>
+                </div>
+                <div class="ar-item ar-item--kendala">
+                  <div class="ar-item-header">
+                    <span class="ar-icon"><i class="fa-solid fa-triangle-exclamation"></i></span>
+                    <span class="ar-label">3. Kendala</span>
+                  </div>
+                  <div class="ar-content">
+                    <ul class="ar-list">
+                      <li>Kecenderungan sejumlah siswa untuk melakukan copy-paste secara langsung saat mengerjakan dokumen atau presentasi tanpa memahami konteks materi dan etika sitasi.</li>
+                      <li>Beberapa siswa masih kesulitan memahami logika rumus lanjutan Microsoft Excel, seperti VLOOKUP bersarang atau IF bertingkat, menunjukkan kebutuhan akan modul referensi yang lebih terstruktur.</li>
+                      <li>Pemahaman siswa tentang etika akademik dan penerapan HAKI masih perlu diperkuat secara berkelanjutan; beberapa kelompok harus ditegur berulang kali.</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="ar-item ar-item--teori">
+                  <div class="ar-item-header">
+                    <span class="ar-icon"><i class="fa-solid fa-book-open-reader"></i></span>
+                    <span class="ar-label">4. Teori Pedagogi</span>
+                  </div>
+                  <div class="ar-content">
+                    Siklus ini mengadopsi <strong>Case-Based Learning</strong> dan <strong>Higher Order Thinking Skills (HOTS)</strong> berbasis Taksonomi Bloom pada level menganalisis dan mengevaluasi. Diskusi studi kasus dirancang mengikuti prinsip <em>collaborative learning</em> sehingga siswa membangun pemahaman bersama melalui pertukaran argumen yang berlandaskan data dan regulasi.
+                  </div>
+                </div>
+                <div class="ar-item ar-item--kelebihan">
+                  <div class="ar-item-header">
+                    <span class="ar-icon"><i class="fa-solid fa-circle-check"></i></span>
+                    <span class="ar-label">5. Kelebihan Artefak</span>
+                  </div>
+                  <div class="ar-content">
+                    <ul class="ar-list ar-list--plus">
+                      <li>Materi mendorong berpikir kritis dan kesadaran etika digital yang relevan dengan kehidupan siswa.</li>
+                      <li>Studi kasus nyata membuat konsep HKI yang abstrak menjadi konkret dan mudah dipahami.</li>
+                      <li>Diskusi kelas berlangsung matang karena siswa sudah percaya diri menyampaikan argumen.</li>
+                      <li>Modul terakhir ini menjadi penutup yang menautkan seluruh kompetensi dari siklus sebelumnya.</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="ar-item ar-item--kekurangan">
+                  <div class="ar-item-header">
+                    <span class="ar-icon"><i class="fa-solid fa-circle-xmark"></i></span>
+                    <span class="ar-label">6. Kekurangan Artefak</span>
+                  </div>
+                  <div class="ar-content">
+                    <ul class="ar-list ar-list--minus">
+                      <li>LKPD studi kasus perlu dilengkapi rubrik penilaian argumentasi agar penilaian lebih objektif.</li>
+                      <li>Alokasi waktu untuk presentasi hasil praktik dokumen terlalu padat sehingga tidak semua kelompok tampil maksimal.</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="ar-item ar-item--faktor">
+                  <div class="ar-item-header">
+                    <span class="ar-icon"><i class="fa-solid fa-star"></i></span>
+                    <span class="ar-label">7. Faktor Keberhasilan</span>
+                  </div>
+                  <div class="ar-content">
+                    Akumulasi perbaikan dari dua siklus sebelumnya menjadi faktor keberhasilan utama  sistem tutor sebaya yang terstruktur, kontrak kelompok, dan peran time-keeper berhasil menciptakan suasana kelas yang kondusif dan terorganisir. Sekitar 95% siswa mampu mengikuti dan mempraktikkan materi secara mandiri tanpa menunggu bantuan guru. Apersepsi berbasis kasus nyata pelanggaran HAKI langsung menarik perhatian seluruh siswa dan menciptakan motivasi belajar yang kuat sejak awal sesi.
+                  </div>
+                </div>
+                <div class="ar-item ar-item--adaptasi">
+                  <div class="ar-item-header">
+                    <span class="ar-icon"><i class="fa-solid fa-arrows-rotate"></i></span>
+                    <span class="ar-label">8. Adaptasi untuk Kelas Lain</span>
+                  </div>
+                  <div class="ar-content">
+                    <ul class="ar-list">
+                      <li><strong>Kelas kemampuan rendah:</strong> Studi kasus disederhanakan menjadi pilihan benar/salah disertai alasan singkat dengan panduan terstruktur.</li>
+                      <li><strong>Fasilitas terbatas:</strong> Praktik Office dapat dilakukan secara bergantian atau berbasis lembar kerja cetak tanpa bergantung penuh pada perangkat.</li>
+                      <li><strong>Kelas lebih maju:</strong> Siswa diminta menyusun mini-debat atau makalah ringkas tentang dilema etika hak cipta digital terkini (mis. AI dan hak cipta).</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- REFLEKSI SIKLUS 3 -->
+            <div class="artefak-category-label">
+              <i class="fa-solid fa-comments"></i> Refleksi Pembelajaran Siklus 3
+            </div>
+            <div class="refleksi-block fade-in">
+              <div class="refleksi-subhead"><i class="fa-solid fa-chalkboard-user"></i> A. Refleksi Kegiatan Praktik Pembelajaran Terbimbing</div>
+              <details class="refleksi-item">
+                <summary>
+                  <span class="refleksi-q-num">A1</span>
+                  <span class="refleksi-q-text">Bagaimana kegiatan apersepsi membantu murid memahami tujuan pembelajaran yang akan dicapai?</span>
+                  <i class="fa-solid fa-chevron-down refleksi-chevron"></i>
+                </summary>
+                <div class="refleksi-answer">
+                  <p>Pada Siklus 3 (Modul Microsoft Office &amp; HAKI), apersepsi berjalan sangat efektif dan lancar. Saya membuka pembelajaran dengan menampilkan kasus nyata pelanggaran hak cipta digital yang viral, lalu menghubungkannya dengan keterampilan Microsoft Office sebagai bekal dunia kerja.</p>
+                  <p>Pendekatan berbasis kasus nyata ini langsung menarik perhatian seluruh siswa. Mereka spontan memberi komentar yang menunjukkan pemahaman mengapa materi ini penting. Tujuan pembelajaran terkomunikasikan dengan sangat jelas, dan pengalaman dua siklus sebelumnya membantu saya merancang apersepsi yang lebih tajam dan terhubung ke konteks nyata.</p>
+                </div>
+              </details>
+              <details class="refleksi-item">
+                <summary>
+                  <span class="refleksi-q-num">A2</span>
+                  <span class="refleksi-q-text">Kegiatan apa saja yang berhasil dan belum berhasil dilaksanakan dalam kegiatan inti?</span>
+                  <i class="fa-solid fa-chevron-down refleksi-chevron"></i>
+                </summary>
+                <div class="refleksi-answer">
+                  <p>Kegiatan inti berjalan sangat baik. Praktik Microsoft Office (Word, Excel, PowerPoint) dan analisis lisensi Creative Commons terlaksana sesuai alokasi waktu. Sistem tutor sebaya dari siklus sebelumnya terbukti efektif mengurangi beban troubleshooting, dan manajemen waktu jauh lebih tertib berkat time-keeper dan kontrak kelompok. Keributan berkurang drastis; siswa lebih fokus.</p>
+                  <p>Masalah yang masih muncul adalah kecenderungan sebagian siswa melakukan copy-paste langsung tanpa memahami konteks dan etika sitasi. Beberapa kelompok masih perlu ditegur soal orisinalitas karya dan penerapan HAKI, menandakan pemahaman etika akademik perlu diperkuat secara berkelanjutan.</p>
+                </div>
+              </details>
+              <details class="refleksi-item">
+                <summary>
+                  <span class="refleksi-q-num">A3</span>
+                  <span class="refleksi-q-text">Seberapa efektif penggunaan media pembelajaran untuk melibatkan partisipasi aktif di kelas?</span>
+                  <i class="fa-solid fa-chevron-down refleksi-chevron"></i>
+                </summary>
+                <div class="refleksi-answer">
+                  <p>Efektivitas media mencapai titik tertinggi. Kombinasi demonstrasi langsung Microsoft 365 di proyektor, panduan visual bergambar hasil perbaikan dari siklus 1, dan studi kasus nyata HAKI menciptakan pengalaman belajar yang komprehensif. Sekitar 95% siswa mampu mempraktikkan materi secara mandiri tanpa menunggu bantuan guru, dan sistem tutor sebaya memaksimalkan keterlibatan.</p>
+                  <p>Satu-satunya area yang masih perlu penguatan adalah media/modul khusus untuk fungsi lanjutan Microsoft Excel, karena beberapa siswa masih kesulitan memahami logika rumus yang kompleks.</p>
+                </div>
+              </details>
+              <details class="refleksi-item">
+                <summary>
+                  <span class="refleksi-q-num">A4</span>
+                  <span class="refleksi-q-text">Bagaimana reaksi/respon murid dalam setiap kegiatan dari pembukaan hingga penutupan pembelajaran?</span>
+                  <i class="fa-solid fa-chevron-down refleksi-chevron"></i>
+                </summary>
+                <div class="refleksi-answer">
+                  <p>Respons siswa pada siklus 3 adalah yang paling positif dan kondusif sepanjang PPL Terbimbing. Siswa bekerja teratur, disiplin menjaga waktu, dan suasana kelas sangat kondusif. Tidak ada lagi keributan berarti; setiap kelompok fokus pada tugasnya. Sesi penutupan terlaksana sempurna  refleksi bersama, umpan balik singkat, dan penarikan kesimpulan oleh siswa.</p>
+                  <p>Hambatan yang tersisa bersifat minor, yakni kebingungan sebagian siswa menganalisis logika fungsi lanjutan Excel seperti VLOOKUP bersarang atau IF bertingkat. Ini menunjukkan diferensiasi konten untuk kecepatan belajar yang berbeda masih perlu diperhatikan ke depan.</p>
+                </div>
+              </details>
+              <div class="refleksi-subhead"><i class="fa-solid fa-comment-dots"></i> B. Refleksi Pengalaman Belajar</div>
+              <details class="refleksi-item">
+                <summary>
+                  <span class="refleksi-q-num">B1</span>
+                  <span class="refleksi-q-text">Apa umpan balik dari Guru Pamong untuk praktik pembelajaran terbimbing yang lebih baik?</span>
+                  <i class="fa-solid fa-chevron-down refleksi-chevron"></i>
+                </summary>
+                <div class="refleksi-answer">
+                  <p>Guru Pamong memberikan penilaian sangat positif atas perkembangan yang konsisten dan terstruktur  dari pengelolaan teknis di siklus 1, dinamika kelompok di siklus 2, hingga kelas yang kondusif di siklus 3. Beliau khusus mengapresiasi penerapan tutor sebaya dan manajemen waktu yang sudah berjalan baik.</p>
+                  <p>Catatan penting untuk terus dikembangkan: literasi instruksional siswa perlu dilatih lebih sistematis. Banyak siswa langsung bertanya tanpa membaca instruksi modul terlebih dahulu. Beliau menyarankan agar siswa dibiasakan membaca instruksi secara mandiri dan tuntas sebelum praktik, sebagai fondasi kemandirian belajar.</p>
+                </div>
+              </details>
+              <details class="refleksi-item">
+                <summary>
+                  <span class="refleksi-q-num">B2</span>
+                  <span class="refleksi-q-text">Unsur apa yang akan Anda ubah agar metode pembelajaran menjadi lebih baik?</span>
+                  <i class="fa-solid fa-chevron-down refleksi-chevron"></i>
+                </summary>
+                <div class="refleksi-answer">
+                  <p>Pertama, membangun kebiasaan literasi instruksional di awal setiap sesi dengan meminta perwakilan siswa membacakan instruksi tugas dengan lantang, agar pemahaman awal seragam dan pertanyaan prosedural berkurang. Kedua, mengembangkan lembar referensi khusus rumus lanjutan Excel dengan bahasa sederhana dan contoh visual.</p>
+                  <p>Ketiga, menyiapkan kuis singkat berbasis HAKI di akhir sesi sebagai reinforcement agar konsep etika sitasi dan orisinalitas tertanam. Keempat, mempertahankan dan memperkuat sistem tutor sebaya yang terbukti efektif sebagai strategi diferensiasi berkelanjutan.</p>
+                </div>
+              </details>
+            </div>
+
+            <div class="artefak-category-label">
+              <i class="fa-solid fa-star-half-stroke"></i> Penilaian GP
+              (Lampiran 7 & 8)
+            </div>
+            <div class="penilaian-row">
+              <button
+                class="penilaian-chip"
+                type="button"
+                data-modal="pdf"
+                data-src="https://drive.google.com/file/d/1LabBmaZvW4KjFIMBeqZTVypE21H9pgaV/preview"
+                data-title="Lampiran 7 – Perangkat Pembelajaran"
+              >
+                <i class="fa-solid fa-file-lines"></i> Lampiran 7 – Perangkat
+                Pembelajaran
+              </button>
+              <button
+                class="penilaian-chip penilaian-chip--alt"
+                type="button"
+                data-modal="pdf"
+                data-src="https://drive.google.com/file/d/12u63FXyfL7syS66QpG4frjqdkc4l2JIj/preview"
+                data-title="Lampiran 8 – Praktik Mengajar"
+              >
+                <i class="fa-solid fa-chalkboard-user"></i> Lampiran 8 – Praktik
+                Mengajar
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-sub" id="galeri" data-section>
+        <h3 class="section-title fade-in">Galeri / Dokumentasi</h3>
+        <p class="section-lead fade-in">
+          Dokumentasi proses mengajar, pendampingan siswa, dan praktik lab.
+        </p>
+        <div class="owl-carousel owl-theme gallery-carousel fade-in">
+          <figure class="gallery-card">
+            <img
+              class="gallery-image"
+              src="assets/images/images-1.jpg"
+              alt="Mengajar di kelas dengan papan tulis"
+              loading="lazy"
+            />
+            <figcaption class="gallery-caption">
+              Mengajar di kelas dengan papan tulis.
+            </figcaption>
+            <div class="gallery-overlay">
+              <div class="gallery-actions">
+                <button
+                  class="ghost-button"
+                  type="button"
+                  data-modal="image"
+                  data-src="assets/images/images-1.jpg"
+                  data-alt="Mengajar di kelas dengan papan tulis"
+                >
+<i class="fa-solid fa-expand"></i>Perbesar
+                </button>
+              </div>
+            </div>
+          </figure>
+          <figure class="gallery-card">
+            <img
+              class="gallery-image"
+              src="assets/images/images-2.jpg"
+              alt="Pendampingan siswa saat praktik laptop"
+              loading="lazy"
+            />
+            <figcaption class="gallery-caption">
+              Pendampingan siswa saat praktik laptop.
+            </figcaption>
+            <div class="gallery-overlay">
+              <div class="gallery-actions">
+                <button
+                  class="ghost-button"
+                  type="button"
+                  data-modal="image"
+                  data-src="assets/images/images-2.jpg"
+                  data-alt="Pendampingan siswa saat praktik laptop"
+                >
+<i class="fa-solid fa-expand"></i>Perbesar
+                </button>
+              </div>
+            </div>
+          </figure>
+          <figure class="gallery-card">
+            <img
+              class="gallery-image"
+              src="assets/images/images-3.jpg"
+              alt="Diskusi kelompok siswa di laboratorium"
+              loading="lazy"
+            />
+            <figcaption class="gallery-caption">
+              Diskusi kelompok siswa di laboratorium.
+            </figcaption>
+            <div class="gallery-overlay">
+              <div class="gallery-actions">
+                <button
+                  class="ghost-button"
+                  type="button"
+                  data-modal="image"
+                  data-src="assets/images/images-3.jpg"
+                  data-alt="Diskusi kelompok siswa di laboratorium"
+                >
+<i class="fa-solid fa-expand"></i>Perbesar
+                </button>
+              </div>
+            </div>
+          </figure>
+          <figure class="gallery-card">
+            <img
+              class="gallery-image"
+              src="assets/images/images-4.jpg"
+              alt="Presentasi materi di depan kelas"
+              loading="lazy"
+            />
+            <figcaption class="gallery-caption">
+              Presentasi materi di depan kelas.
+            </figcaption>
+            <div class="gallery-overlay">
+              <div class="gallery-actions">
+                <button
+                  class="ghost-button"
+                  type="button"
+                  data-modal="image"
+                  data-src="assets/images/images-4.jpg"
+                  data-alt="Presentasi materi di depan kelas"
+                >
+<i class="fa-solid fa-expand"></i>Perbesar
+                </button>
+              </div>
+            </div>
+          </figure>
+          <figure class="gallery-card">
+            <img
+              class="gallery-image"
+              src="assets/images/images-5.jpeg"
+              alt="Praktik lab komputer bersama siswa"
+              loading="lazy"
+            />
+            <figcaption class="gallery-caption">
+              Praktik lab komputer bersama siswa.
+            </figcaption>
+            <div class="gallery-overlay">
+              <div class="gallery-actions">
+                <button
+                  class="ghost-button"
+                  type="button"
+                  data-modal="image"
+                  data-src="assets/images/images-5.jpeg"
+                  data-alt="Praktik lab komputer bersama siswa"
+                >
+<i class="fa-solid fa-expand"></i>Perbesar
+                </button>
+              </div>
+            </div>
+          </figure>
+          <figure class="gallery-card">
+            <img
+              class="gallery-image"
+              src="assets/images/images-6.jpeg"
+              alt="Siswa mempresentasikan hasil kerja"
+              loading="lazy"
+            />
+            <figcaption class="gallery-caption">
+              Siswa mempresentasikan hasil kerja.
+            </figcaption>
+            <div class="gallery-overlay">
+              <div class="gallery-actions">
+                <button
+                  class="ghost-button"
+                  type="button"
+                  data-modal="image"
+                  data-src="assets/images/images-6.jpeg"
+                  data-alt="Siswa mempresentasikan hasil kerja"
+                >
+<i class="fa-solid fa-expand"></i>Perbesar
+                </button>
+              </div>
+            </div>
+          </figure>
+          <figure class="gallery-card">
+            <img
+              class="gallery-image"
+              src="assets/images/images-7.jpeg"
+              alt="Interaksi kelas saat pembelajaran"
+              loading="lazy"
+            />
+            <figcaption class="gallery-caption">
+              Interaksi kelas saat pembelajaran.
+            </figcaption>
+            <div class="gallery-overlay">
+              <div class="gallery-actions">
+                <button
+                  class="ghost-button"
+                  type="button"
+                  data-modal="image"
+                  data-src="assets/images/images-7.jpeg"
+                  data-alt="Interaksi kelas saat pembelajaran"
+                >
+<i class="fa-solid fa-expand"></i>Perbesar
+                </button>
+              </div>
+            </div>
+          </figure>
+          <figure class="gallery-card">
+            <img
+              class="gallery-image"
+              src="assets/images/images-8.jpeg"
+              alt="Pendampingan individual di lab komputer"
+              loading="lazy"
+            />
+            <figcaption class="gallery-caption">
+              Pendampingan individual di lab komputer.
+            </figcaption>
+            <div class="gallery-overlay">
+              <div class="gallery-actions">
+                <button
+                  class="ghost-button"
+                  type="button"
+                  data-modal="image"
+                  data-src="assets/images/images-8.jpeg"
+                  data-alt="Pendampingan individual di lab komputer"
+                >
+<i class="fa-solid fa-expand"></i>Perbesar
+                </button>
+              </div>
+            </div>
+          </figure>
+        </div>
+      </section>
+
+      <!-- PENILAIAN DPL -->
+      <section class="section section-sub" id="penilaian-dpl" data-section>
+        <h3 class="section-title fade-in">Penilaian Dosen Pembimbing Lapangan (DPL)</h3>
+        <p class="section-lead fade-in">
+          Penilaian dan umpan balik dari Dosen Pembimbing Lapangan (DPL) terhadap keseluruhan kinerja dan perkembangan kompetensi mahasiswa selama PPL Terbimbing.
+        </p>
+        <div class="dpl-feedback-box fade-in">
+          <h4><i class="fa-solid fa-user-tie"></i> Umpan Balik DPL</h4>
+          <p>
+            DPL mengapresiasi konsistensi perkembangan mahasiswa dari siklus pertama hingga siklus ketiga yang tercermin jelas dalam dokumentasi refleksi dan artefak pembelajaran. Kemampuan merancang modul ajar berbasis TPACK dan mengintegrasikan teknologi secara kontekstual dinilai sebagai kekuatan utama yang perlu terus dikembangkan.
+          </p>
+          <p>
+            DPL menyarankan agar mahasiswa memperdalam pemahaman tentang <strong>asesmen autentik</strong> dan diferensiasi instruksional sebagai bekal menghadapi PPL Mandiri, serta meningkatkan kemampuan menulis jurnal refleksi yang lebih sistematis berbasis model GIBBS agar proses belajar dari pengalaman menjadi lebih terstruktur dan terukur.
+          </p>
+        </div>
+        <div class="atp-doc-row fade-in" style="margin-top:1rem;">
+          <button
+            class="penilaian-chip"
+            type="button"
+            data-modal="pdf"
+            data-src="https://drive.google.com/file/d/1LabBmaZvW4KjFIMBeqZTVypE21H9pgaV/preview"
+            data-title="Penilaian DPL – PPL Terbimbing"
+          >
+            <i class="fa-solid fa-file-lines"></i> Dokumen Penilaian DPL
+          </button>
+        </div>
+      </section>
+
+      <!-- SERTIFIKAT -->
+      <section class="section section-sub" id="sertifikat" data-section>
+        <h3 class="section-title fade-in">Sertifikat &amp; Penghargaan</h3>
+        <p class="section-lead fade-in">
+          Sertifikat dan penghargaan yang mendukung kompetensi sebagai calon guru profesional di bidang teknologi informasi.
+        </p>
+        <div class="card-grid card-grid-2 card-grid--spaced fade-in">
+          <div class="card">
+            <div class="card-icon"><i class="fa-solid fa-certificate" style="color:var(--accent);"></i></div>
+            <div class="card-title">Sertifikat PPG Calon Guru</div>
+            <div class="card-body">Sertifikat keikutsertaan Program Pendidikan Profesi Guru (PPG) Calon Guru Tahun 2025/2026 dari Universitas Islam Makassar.</div>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="fa-solid fa-award" style="color:var(--accent2);"></i></div>
+            <div class="card-title">Sertifikat Bootcamp Kampus Merdeka</div>
+            <div class="card-body">Sertifikat penyelesaian program Fullstack Web Development Intensif dari Kampus Merdeka, mencakup Laravel, REST API, dan Golang.</div>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="fa-solid fa-star" style="color:var(--accent3);"></i></div>
+            <div class="card-title">Sertifikat Pijar Inspirasi</div>
+            <div class="card-body">Pengakuan atas kontribusi aktif dalam program sosial berbasis komunitas untuk pemberdayaan generasi muda di Sulawesi Tenggara.</div>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="fa-solid fa-laptop-code" style="color:var(--accent);"></i></div>
+            <div class="card-title">Sertifikat Kompetensi TIK</div>
+            <div class="card-body">Sertifikat kompetensi di bidang pengembangan web dan teknologi informasi yang mendukung profesionalisme sebagai guru TIK.</div>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- LAMPIRAN -->
+      <section class="section" id="lampiran" data-section>        <h2 class="section-title fade-in">
+          Lampiran <span class="section-accent2">Penilaian GP</span>
+        </h2>
+        <p class="section-lead fade-in">
+          Hasil penilaian Guru Pamong atas rancangan pembelajaran (Lampiran 7)
+          dan praktik mengajar (Lampiran 8) selama tiga siklus PPL Terbimbing.
+        </p>
+
+        <!-- LAMPIRAN SIKLUS TABS -->
+        <div class="lampiran-tabs-wrap fade-in">
+          <div class="lampiran-type-switcher">
+            <button class="lampiran-type-btn active" data-lampiran-type="7">
+              <i class="fa-solid fa-clipboard-list"></i> Lampiran 7
+              <small>Perangkat Pembelajaran</small>
+            </button>
+            <button class="lampiran-type-btn" data-lampiran-type="8">
+              <i class="fa-solid fa-chalkboard-user"></i> Lampiran 8
+              <small>Praktik Mengajar</small>
+            </button>
+          </div>
+
+          <!-- LAMPIRAN 7 -->
+          <div class="lampiran-type-content active" id="lampiran-type-7">
+            <div class="penilaian-summary fade-in">
+            <div class="penilaian-stat">
+              <div class="penilaian-stat-siklus">Siklus 1</div>
+              <div class="penilaian-stat-score">66<span>/80</span></div>
+              <div class="penilaian-stat-bar"><span style="width:82.5%"></span></div>
+              <div class="penilaian-stat-pct">82,5% &middot; Baik</div>
+            </div>
+            <div class="penilaian-stat">
+              <div class="penilaian-stat-siklus">Siklus 2</div>
+              <div class="penilaian-stat-score">67<span>/80</span></div>
+              <div class="penilaian-stat-bar"><span style="width:83.8%"></span></div>
+              <div class="penilaian-stat-pct">83,8% &middot; Baik</div>
+            </div>
+            <div class="penilaian-stat penilaian-stat--best">
+              <div class="penilaian-stat-siklus">Siklus 3</div>
+              <div class="penilaian-stat-score">74<span>/80</span></div>
+              <div class="penilaian-stat-bar"><span style="width:92.5%"></span></div>
+              <div class="penilaian-stat-pct">92,5% &middot; Sangat Baik</div>
+            </div>
+            </div>
+
+            <div class="skor-legend">
+              <span class="skor-legend-item"><span class="skor skor-4">4</span> Sangat Baik</span>
+              <span class="skor-legend-item"><span class="skor skor-3">3</span> Baik</span>
+              <span class="skor-legend-item"><span class="skor skor-2">2</span> Cukup</span>
+              <span class="skor-legend-item"><span class="skor skor-1">1</span> Tidak Baik</span>
+            </div>
+
+            <div class="table-wrap table-wrap--spaced fade-in">
+              <table class="instrumen-table rubrik-table">
+                <thead>
+                  <tr>
+                    <th>No</th>
+                    <th>Aspek</th>
+                    <th>Indikator</th>
+                    <th>Deskriptor</th>
+                    <th>S1</th>
+                    <th>S2</th>
+                    <th>S3</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr><td class="rubrik-no" rowspan="4">1</td><td class="rubrik-aspek" rowspan="4">Identitas dan Kompetensi</td><td class="rubrik-indikator" rowspan="1">Kelengkapan</td><td>Memuat mata pelajaran, jenjang pendidikan, kelas, semester, alokasi waktu, dan tanggal pelaksanaan.</td><td class="skor-col"><span class="skor skor-4">4</span></td><td class="skor-col"><span class="skor skor-3">3</span></td><td class="skor-col"><span class="skor skor-4">4</span></td></tr>
+                    <tr><td class="rubrik-indikator" rowspan="2">Kompetensi</td><td>Memuat SK, KD, CP, dan indikator pembelajaran sesuai dengan standar isi/tujuan.</td><td class="skor-col"><span class="skor skor-2">2</span></td><td class="skor-col"><span class="skor skor-4">4</span></td><td class="skor-col"><span class="skor skor-4">4</span></td></tr>
+                    <tr><td>Memuat level kemampuan murid berdasarkan hasil observasi peserta didik.</td><td class="skor-col"><span class="skor skor-3">3</span></td><td class="skor-col"><span class="skor skor-3">3</span></td><td class="skor-col"><span class="skor skor-4">4</span></td></tr>
+                    <tr><td class="rubrik-indikator" rowspan="1">Tujuan</td><td>Memuat tujuan dengan menggunakan kata kerja Bloom Taxonomy.</td><td class="skor-col"><span class="skor skor-4">4</span></td><td class="skor-col"><span class="skor skor-4">4</span></td><td class="skor-col"><span class="skor skor-3">3</span></td></tr>
+                    <tr><td class="rubrik-no" rowspan="7">2</td><td class="rubrik-aspek" rowspan="7">Pengembangan materi, bahan, sumber, dan media belajar</td><td class="rubrik-indikator" rowspan="2">Pengembang materi</td><td>Cakupan materi sesuai dengan KD/CP dan hasil observasi peserta didik.</td><td class="skor-col"><span class="skor skor-3">3</span></td><td class="skor-col"><span class="skor skor-2">2</span></td><td class="skor-col"><span class="skor skor-4">4</span></td></tr>
+                    <tr><td>Materi pembelajaran berdasarkan kajian teori dan menggunakan teknik scaffolding.</td><td class="skor-col"><span class="skor skor-3">3</span></td><td class="skor-col"><span class="skor skor-4">4</span></td><td class="skor-col"><span class="skor skor-4">4</span></td></tr>
+                    <tr><td class="rubrik-indikator" rowspan="1">Pengembang bahan belajar</td><td>Isi bahan ajar memuat materi yang dipelajari dan instruksi yang diperlukan.</td><td class="skor-col"><span class="skor skor-3">3</span></td><td class="skor-col"><span class="skor skor-4">4</span></td><td class="skor-col"><span class="skor skor-3">3</span></td></tr>
+                    <tr><td class="rubrik-indikator" rowspan="2">Sumber belajar</td><td>Sumber belajar sesuai dengan KD dan tujuan pembelajaran.</td><td class="skor-col"><span class="skor skor-3">3</span></td><td class="skor-col"><span class="skor skor-3">3</span></td><td class="skor-col"><span class="skor skor-4">4</span></td></tr>
+                    <tr><td>Sumber belajar dipilih berdasarkan level kemampuan/pemahaman peserta didik.</td><td class="skor-col"><span class="skor skor-4">4</span></td><td class="skor-col"><span class="skor skor-4">4</span></td><td class="skor-col"><span class="skor skor-4">4</span></td></tr>
+                    <tr><td class="rubrik-indikator" rowspan="2">Media belajar</td><td>Media pembelajaran disajikan berdasarkan kondisi lingkungan belajar dan kebutuhan murid.</td><td class="skor-col"><span class="skor skor-3">3</span></td><td class="skor-col"><span class="skor skor-2">2</span></td><td class="skor-col"><span class="skor skor-3">3</span></td></tr>
+                    <tr><td>Media pembelajaran bervariasi mengikuti transisi kegiatan yang direncanakan.</td><td class="skor-col"><span class="skor skor-3">3</span></td><td class="skor-col"><span class="skor skor-3">3</span></td><td class="skor-col"><span class="skor skor-4">4</span></td></tr>
+                    <tr><td class="rubrik-no" rowspan="6">3</td><td class="rubrik-aspek" rowspan="6">Skenario kegiatan pembelajaran</td><td class="rubrik-indikator" rowspan="1">Kegiatan pembuka</td><td>Memuat kegiatan apersepsi untuk menghubungkan persepsi awal peserta didik dan tujuan pembelajaran.</td><td class="skor-col"><span class="skor skor-4">4</span></td><td class="skor-col"><span class="skor skor-4">4</span></td><td class="skor-col"><span class="skor skor-4">4</span></td></tr>
+                    <tr><td class="rubrik-indikator" rowspan="3">Kegiatan inti</td><td>Menuliskan tahapan kegiatan inti secara jelas dengan menerapkan teknik scaffolding.</td><td class="skor-col"><span class="skor skor-3">3</span></td><td class="skor-col"><span class="skor skor-2">2</span></td><td class="skor-col"><span class="skor skor-3">3</span></td></tr>
+                    <tr><td>Menuliskan alokasi waktu untuk setiap tahapan.</td><td class="skor-col"><span class="skor skor-2">2</span></td><td class="skor-col"><span class="skor skor-4">4</span></td><td class="skor-col"><span class="skor skor-4">4</span></td></tr>
+                    <tr><td>Tahapan menunjukkan interaksi murid dengan bahan ajar, sesama murid, guru dan lingkungan.</td><td class="skor-col"><span class="skor skor-4">4</span></td><td class="skor-col"><span class="skor skor-2">2</span></td><td class="skor-col"><span class="skor skor-3">3</span></td></tr>
+                    <tr><td class="rubrik-indikator" rowspan="2">Kegiatan penutup</td><td>Memuat simpulan akhir yang akan direfleksikan oleh siswa dan guru.</td><td class="skor-col"><span class="skor skor-3">3</span></td><td class="skor-col"><span class="skor skor-3">3</span></td><td class="skor-col"><span class="skor skor-4">4</span></td></tr>
+                    <tr><td>Memuat rencana tindak lanjut pembelajaran (tugas pemantapan atau reviu).</td><td class="skor-col"><span class="skor skor-3">3</span></td><td class="skor-col"><span class="skor skor-4">4</span></td><td class="skor-col"><span class="skor skor-4">4</span></td></tr>
+                    <tr><td class="rubrik-no" rowspan="3">4</td><td class="rubrik-aspek" rowspan="3">Penilaian</td><td class="rubrik-indikator" rowspan="3">Kesesuaian dengan kompetensi</td><td>Alat penilaian sesuai dengan KD/CP, tujuan pembelajaran, dan kemampuan peserta didik.</td><td class="skor-col"><span class="skor skor-4">4</span></td><td class="skor-col"><span class="skor skor-4">4</span></td><td class="skor-col"><span class="skor skor-4">4</span></td></tr>
+                    <tr><td>Instruksi asesmen jelas dan merinci langkah yang diperlukan dan/atau disertai contoh.</td><td class="skor-col"><span class="skor skor-4">4</span></td><td class="skor-col"><span class="skor skor-4">4</span></td><td class="skor-col"><span class="skor skor-3">3</span></td></tr>
+                    <tr><td>Memuat kunci/kisi-kisi jawaban dan rubrik penilaian.</td><td class="skor-col"><span class="skor skor-4">4</span></td><td class="skor-col"><span class="skor skor-4">4</span></td><td class="skor-col"><span class="skor skor-4">4</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="lampiran-note lampiran-note--success">
+              <i class="fa-solid fa-circle-check"></i> Skor perangkat pembelajaran meningkat dari 66 (Siklus 1) menjadi 74 (Siklus 3) dari maksimal 80. Perbaikan paling menonjol terjadi pada kelengkapan kompetensi, pemilihan materi, dan kejelasan skenario kegiatan inti.
+            </div>
+
+            <div class="lampiran-file-preview fade-in">
+              <div class="media-card">
+                <div class="media-embed media-embed--tall">
+                  <iframe
+                    src="https://drive.google.com/file/d/1LabBmaZvW4KjFIMBeqZTVypE21H9pgaV/preview"
+                    title="Lampiran 7"
+                    loading="lazy"
+                    allow="autoplay"
+                  ></iframe>
+                </div>
+                <div class="media-meta">
+                  <h3>Preview Lampiran 7 (Semua Siklus)</h3>
+                  <p>Dokumen penilaian perangkat pembelajaran oleh Guru Pamong.</p>
+                  <div class="media-actions">
+                    <a
+                      class="ghost-button"
+                      href="https://drive.google.com/file/d/1LabBmaZvW4KjFIMBeqZTVypE21H9pgaV/view"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <i class="fa-solid fa-arrow-up-right-from-square"></i>Buka di Google Drive
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- LAMPIRAN 8 -->
+          <div class="lampiran-type-content" id="lampiran-type-8" hidden>
+            <div class="penilaian-summary fade-in">
+            <div class="penilaian-stat">
+              <div class="penilaian-stat-siklus">Siklus 1</div>
+              <div class="penilaian-stat-score">68<span>/80</span></div>
+              <div class="penilaian-stat-bar"><span style="width:85.0%"></span></div>
+              <div class="penilaian-stat-pct">85% &middot; Baik</div>
+            </div>
+            <div class="penilaian-stat">
+              <div class="penilaian-stat-siklus">Siklus 2</div>
+              <div class="penilaian-stat-score">68<span>/80</span></div>
+              <div class="penilaian-stat-bar"><span style="width:85.0%"></span></div>
+              <div class="penilaian-stat-pct">85% &middot; Baik</div>
+            </div>
+            <div class="penilaian-stat penilaian-stat--best">
+              <div class="penilaian-stat-siklus">Siklus 3</div>
+              <div class="penilaian-stat-score">74<span>/80</span></div>
+              <div class="penilaian-stat-bar"><span style="width:92.5%"></span></div>
+              <div class="penilaian-stat-pct">92,5% &middot; Sangat Baik</div>
+            </div>
+            </div>
+
+            <div class="skor-legend">
+              <span class="skor-legend-item"><span class="skor skor-4">4</span> Sangat Baik</span>
+              <span class="skor-legend-item"><span class="skor skor-3">3</span> Baik</span>
+              <span class="skor-legend-item"><span class="skor skor-2">2</span> Cukup</span>
+              <span class="skor-legend-item"><span class="skor skor-1">1</span> Tidak Baik</span>
+            </div>
+
+            <div class="table-wrap table-wrap--spaced fade-in">
+              <table class="instrumen-table rubrik-table">
+                <thead>
+                  <tr>
+                    <th>No</th>
+                    <th>Aspek</th>
+                    <th>Indikator</th>
+                    <th>Deskriptor</th>
+                    <th>S1</th>
+                    <th>S2</th>
+                    <th>S3</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr><td class="rubrik-no" rowspan="1">1</td><td class="rubrik-aspek" rowspan="1">Membuka Pelajaran</td><td class="rubrik-indikator" rowspan="1">Apersepsi</td><td>Keterkaitan tujuan pembelajaran dengan pengetahuan yang sudah dipelajari murid atau kehidupan sehari-hari.</td><td class="skor-col"><span class="skor skor-3">3</span></td><td class="skor-col"><span class="skor skor-4">4</span></td><td class="skor-col"><span class="skor skor-3">3</span></td></tr>
+                    <tr><td class="rubrik-no" rowspan="11">2</td><td class="rubrik-aspek" rowspan="11">Melaksanakan kegiatan inti pelajaran</td><td class="rubrik-indikator" rowspan="2">Metode pembelajaran</td><td>Metode pembelajaran mendorong murid untuk aktif di kelas.</td><td class="skor-col"><span class="skor skor-3">3</span></td><td class="skor-col"><span class="skor skor-3">3</span></td><td class="skor-col"><span class="skor skor-4">4</span></td></tr>
+                    <tr><td>Metode pembelajaran mendorong murid untuk berkolaboratif dalam diskusi atau latihan di kelas.</td><td class="skor-col"><span class="skor skor-4">4</span></td><td class="skor-col"><span class="skor skor-2">2</span></td><td class="skor-col"><span class="skor skor-4">4</span></td></tr>
+                    <tr><td class="rubrik-indikator" rowspan="2">Ketepatan materi/konsep</td><td>Materi yang disajikan sesuai dengan KD/CP dan tujuan pembelajaran.</td><td class="skor-col"><span class="skor skor-2">2</span></td><td class="skor-col"><span class="skor skor-4">4</span></td><td class="skor-col"><span class="skor skor-4">4</span></td></tr>
+                    <tr><td>Materi yang dijelaskan sesuai dengan level kemampuan dan latar belakang murid berdasarkan hasil observasi.</td><td class="skor-col"><span class="skor skor-3">3</span></td><td class="skor-col"><span class="skor skor-4">4</span></td><td class="skor-col"><span class="skor skor-3">3</span></td></tr>
+                    <tr><td class="rubrik-indikator" rowspan="4">Penguasaan kompetensi melaksanakan pembelajaran</td><td>Mendemonstrasikan kompetensi yang harus dicapai murid.</td><td class="skor-col"><span class="skor skor-3">3</span></td><td class="skor-col"><span class="skor skor-3">3</span></td><td class="skor-col"><span class="skor skor-3">3</span></td></tr>
+                    <tr><td>Melakukan transisi kegiatan yang berkesinambungan untuk penguatan kompetensi murid.</td><td class="skor-col"><span class="skor skor-4">4</span></td><td class="skor-col"><span class="skor skor-4">4</span></td><td class="skor-col"><span class="skor skor-4">4</span></td></tr>
+                    <tr><td>Memberi umpan balik terhadap performa murid di kelas.</td><td class="skor-col"><span class="skor skor-3">3</span></td><td class="skor-col"><span class="skor skor-2">2</span></td><td class="skor-col"><span class="skor skor-4">4</span></td></tr>
+                    <tr><td>Memberikan respon terhadap pertanyaan maupun pendapat murid di kelas.</td><td class="skor-col"><span class="skor skor-4">4</span></td><td class="skor-col"><span class="skor skor-3">3</span></td><td class="skor-col"><span class="skor skor-4">4</span></td></tr>
+                    <tr><td class="rubrik-indikator" rowspan="3">Media pembelajaran</td><td>Media pembelajaran digunakan sesuai dengan KD/CP, tujuan pembelajaran, dan kebutuhan murid.</td><td class="skor-col"><span class="skor skor-3">3</span></td><td class="skor-col"><span class="skor skor-4">4</span></td><td class="skor-col"><span class="skor skor-4">4</span></td></tr>
+                    <tr><td>Menggunakan media pembelajaran dengan efektif dan efisien sesuai target pembelajaran dan kondisi kelas.</td><td class="skor-col"><span class="skor skor-4">4</span></td><td class="skor-col"><span class="skor skor-4">4</span></td><td class="skor-col"><span class="skor skor-4">4</span></td></tr>
+                    <tr><td>Memanfaatkan media pembelajaran dengan melibatkan partisipasi aktif murid.</td><td class="skor-col"><span class="skor skor-3">3</span></td><td class="skor-col"><span class="skor skor-3">3</span></td><td class="skor-col"><span class="skor skor-4">4</span></td></tr>
+                    <tr><td class="rubrik-no" rowspan="3">3</td><td class="rubrik-aspek" rowspan="3">Menutup pembelajaran</td><td class="rubrik-indikator" rowspan="3">Refleksi dan penilaian</td><td>Mengakomodasi kesulitan murid yang terjadi di dalam kelas.</td><td class="skor-col"><span class="skor skor-4">4</span></td><td class="skor-col"><span class="skor skor-4">4</span></td><td class="skor-col"><span class="skor skor-3">3</span></td></tr>
+                    <tr><td>Membantu membuat kesimpulan akhir dari materi yang telah dipelajari.</td><td class="skor-col"><span class="skor skor-4">4</span></td><td class="skor-col"><span class="skor skor-4">4</span></td><td class="skor-col"><span class="skor skor-4">4</span></td></tr>
+                    <tr><td>Melakukan penilaian terhadap performa murid sesuai dengan KD/CP dan tujuan pembelajaran.</td><td class="skor-col"><span class="skor skor-3">3</span></td><td class="skor-col"><span class="skor skor-2">2</span></td><td class="skor-col"><span class="skor skor-4">4</span></td></tr>
+                    <tr><td class="rubrik-no" rowspan="5">4</td><td class="rubrik-aspek" rowspan="5">Faktor penunjang</td><td class="rubrik-indikator" rowspan="5">Penggunaan bahasa, pengaturan waktu, percaya diri, dan penampilan diri</td><td>Menggunakan bahasa yang jelas agar mudah dipahami oleh murid.</td><td class="skor-col"><span class="skor skor-3">3</span></td><td class="skor-col"><span class="skor skor-3">3</span></td><td class="skor-col"><span class="skor skor-4">4</span></td></tr>
+                    <tr><td>Mengorganisasikan waktu dengan baik dari awal hingga akhir kegiatan pembelajaran.</td><td class="skor-col"><span class="skor skor-4">4</span></td><td class="skor-col"><span class="skor skor-4">4</span></td><td class="skor-col"><span class="skor skor-3">3</span></td></tr>
+                    <tr><td>Menunjukkan kepercayaan diri yang baik.</td><td class="skor-col"><span class="skor skor-4">4</span></td><td class="skor-col"><span class="skor skor-4">4</span></td><td class="skor-col"><span class="skor skor-3">3</span></td></tr>
+                    <tr><td>Memperlakukan murid dengan baik dan profesional.</td><td class="skor-col"><span class="skor skor-4">4</span></td><td class="skor-col"><span class="skor skor-3">3</span></td><td class="skor-col"><span class="skor skor-4">4</span></td></tr>
+                    <tr><td>Berbusana formal dan berdandan rapi.</td><td class="skor-col"><span class="skor skor-3">3</span></td><td class="skor-col"><span class="skor skor-4">4</span></td><td class="skor-col"><span class="skor skor-4">4</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="lampiran-note lampiran-note--success">
+              <i class="fa-solid fa-circle-check"></i> Skor praktik mengajar naik dari 68 (Siklus 1) menjadi 74 (Siklus 3) dari maksimal 80. Peningkatan terlihat pada penguasaan kompetensi mengajar, pemanfaatan media, dan pengelolaan kelas dari siklus ke siklus.
+            </div>
+
+            <div class="lampiran-file-preview fade-in">
+              <div class="media-card">
+                <div class="media-embed media-embed--tall">
+                  <iframe
+                    src="https://drive.google.com/file/d/12u63FXyfL7syS66QpG4frjqdkc4l2JIj/preview"
+                    title="Lampiran 8"
+                    loading="lazy"
+                    allow="autoplay"
+                  ></iframe>
+                </div>
+                <div class="media-meta">
+                  <h3>Preview Lampiran 8 (Semua Siklus)</h3>
+                  <p>Dokumen penilaian praktik mengajar oleh Guru Pamong.</p>
+                  <div class="media-actions">
+                    <a
+                      class="ghost-button"
+                      href="https://drive.google.com/file/d/12u63FXyfL7syS66QpG4frjqdkc4l2JIj/view"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <i class="fa-solid fa-arrow-up-right-from-square"></i>Buka di Google Drive
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Anchor targets for nav -->
+      <div id="lampiran-7" style="position: relative; top: -80px"></div>
+      <div id="lampiran-8" style="position: relative; top: -80px"></div>
+
+      <div class="divider"></div>
+
+      <!-- MODEL GURU -->
+      <section class="section" id="model-guru" data-section>        <h2 class="section-title fade-in">
+          Ingin Menjadi Guru <span class="section-accent">Seperti Apa ?</span>
+        </h2>
+
+        <div class="highlight-box fade-in">
+          <p>
+            <strong class="text-strong">Visi:</strong> Menjadi guru berbasis
+            teknologi yang inovatif dan inspiratif yang tidak hanya mengajarkan
+            keterampilan teknis, tetapi juga membentuk pola pikir digital
+            generasi berikutnya.
+          </p>
+        </div>
+
+        <div class="card-grid card-grid-2 card-grid--spaced fade-in">
+          <div>
+            <h3 class="section-eyebrow">
+              <i
+                class="fa-solid fa-bullseye"
+                style="color: var(--accent2); margin-right: 0.5rem"
+              ></i
+              >Misi
+            </h3>
+            <ul class="misi-list">
+              <li>
+                <i class="fa-solid fa-diamond fa-xs"></i> Integrasi teknologi
+                dalam setiap sesi belajar
+              </li>
+              <li>
+                <i class="fa-solid fa-diamond fa-xs"></i> Pembelajaran
+                interaktif berbasis proyek nyata
+              </li>
+              <li>
+                <i class="fa-solid fa-diamond fa-xs"></i> Mendorong critical
+                thinking & computational thinking
+              </li>
+              <li>
+                <i class="fa-solid fa-diamond fa-xs"></i> Membangun ekosistem
+                belajar yang inklusif
+              </li>
+              <li>
+                <i class="fa-solid fa-diamond fa-xs"></i> Menghubungkan
+                pendidikan dengan industri teknologi
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="section-eyebrow">
+              <i
+                class="fa-solid fa-lightbulb"
+                style="color: var(--accent3); margin-right: 0.5rem"
+              ></i
+              >Karakter yang Dibangun
+            </h3>
+            <ul class="karakter-list">
+              <li>Adaptif</li>
+              <li>Inovatif</li>
+              <li>Empatik</li>
+              <li>Growth Mindset</li>
+              <li>Kolaboratif</li>
+              <li>Reflektif</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="kompetensi-grid kompetensi-grid--spaced fade-in">
+          <div class="kompetensi-card">
+            <div class="kompetensi-icon"><i class="fa-solid fa-brain"></i></div>
+            <div class="kompetensi-name">Kepribadian</div>
+            <div class="kompetensi-desc">
+              Integritas, keteladanan, dan kedewasaan emosional sebagai pendidik
+            </div>
+          </div>
+          <div class="kompetensi-card">
+            <div class="kompetensi-icon">
+              <i class="fa-solid fa-handshake"></i>
+            </div>
+            <div class="kompetensi-name">Sosial</div>
+            <div class="kompetensi-desc">
+              Komunikasi efektif, empati, dan kemampuan berkolaborasi dengan
+              semua pemangku kepentingan
+            </div>
+          </div>
+          <div class="kompetensi-card">
+            <div class="kompetensi-icon">
+              <i class="fa-solid fa-book-open"></i>
+            </div>
+            <div class="kompetensi-name">Profesional</div>
+            <div class="kompetensi-desc">
+              Penguasaan materi mendalam dan terus berkembang seiring
+              perkembangan teknologi
+            </div>
+          </div>
+          <div class="kompetensi-card">
+            <div class="kompetensi-icon">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <div class="kompetensi-name">Pedagogik</div>
+            <div class="kompetensi-desc">
+              Merancang pembelajaran berpusat pada siswa dengan strategi
+              diferensiasi yang efektif
+            </div>
+          </div>
+        </div>
+
+        <!-- TARGET JANGKA -->
+        <h3 class="section-eyebrow fade-in" style="margin-top:2.5rem;">
+          <i class="fa-solid fa-timeline" style="color:var(--accent3);margin-right:0.5rem;"></i>
+          Target Pengembangan Diri
+        </h3>
+        <div class="target-grid fade-in">
+          <div class="target-card">
+            <div class="target-card-period">Jangka Pendek · 0–6 Bulan</div>
+            <div class="target-card-title">Fondasi Kompetensi Mengajar</div>
+            <div class="target-card-body">
+              <ul>
+                <li>Menyelesaikan PPL Terbimbing dengan nilai minimal A</li>
+                <li>Menyusun minimal 2 modul ajar berdiferensiasi berbasis TPACK</li>
+                <li>Menguasai asesmen formatif digital (Quizizz, Google Form)</li>
+                <li>Membiasakan penulisan refleksi mingguan berbasis model GIBBS</li>
+              </ul>
+            </div>
+          </div>
+          <div class="target-card">
+            <div class="target-card-period">Jangka Menengah · 6–18 Bulan</div>
+            <div class="target-card-title">Penguatan Praktik Profesional</div>
+            <div class="target-card-body">
+              <ul>
+                <li>Lulus PPL Mandiri dan memperoleh sertifikat pendidik</li>
+                <li>Mengembangkan bank soal HOTS berbasis Bloom Taxonomy</li>
+                <li>Aktif dalam komunitas GTK dan berbagi praktik baik</li>
+                <li>Mempelajari classroom management berbasis riset tindakan kelas</li>
+              </ul>
+            </div>
+          </div>
+          <div class="target-card">
+            <div class="target-card-period">Jangka Panjang · 2–5 Tahun</div>
+            <div class="target-card-title">Guru Inovatif dan Inspiratif</div>
+            <div class="target-card-body">
+              <ul>
+                <li>Menjadi guru TIK profesional bersertifikat di sekolah negeri/swasta</li>
+                <li>Mengembangkan platform belajar digital untuk siswa SMK</li>
+                <li>Mempublikasikan artikel praktik baik di jurnal pendidikan</li>
+                <li>Membimbing komunitas belajar teknologi di daerah asal</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-lead section-lead--spaced fade-in">
+          Filosofi mengajar yang saya pegang:
+        </div>
+        <div class="filosifi-block filosifi-block--accent2 fade-in">
+          Saya percaya bahwa pendidikan teknologi informasi bukan sekadar
+          tentang mengajarkan cara menggunakan alat melainkan tentang membangun
+          cara berpikir. Dalam setiap sesi yang saya bawakan, saya berpegang
+          pada prinsip bahwa
+          <strong class="text-strong">teknologi adalah bahasa</strong>, dan
+          tugas seorang guru adalah mengajarkan siswa untuk berbicara, berpikir,
+          dan berkreasi dalam bahasa tersebut.
+        </div>
+        <div class="filosifi-block filosifi-block--accent3 fade-in">
+          Pengalaman saya selama tiga tahun di industri teknologi mengajarkan
+          bahwa <strong class="text-strong">kompetensi sejati</strong> lahir
+          dari keberanian untuk mencoba, gagal, dan mencoba kembali. Prinsip ini
+          saya bawa ke dalam kelas agar siswa berani bereksperimen.
+        </div>
+        <div class="filosifi-block filosifi-block--accent fade-in">
+          Saya menghidupi prinsip dialog ala Paulo Freire: setiap kelas adalah
+          ruang dialog, bukan ruang monolog. Siswa adalah mitra belajar yang
+          membawa perspektif, pertanyaan, dan kreativitas unik mereka sendiri.
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- REFLEKSI DIRI -->
+      <section class="section" id="refleksi-diri" data-section>        <div class="section-label fade-in">Refleksi Diri</div>
+        <h2 class="section-title fade-in">
+          Refleksi Diri <span class="section-accent">sebagai Calon Guru</span>
+        </h2>
+        <div class="highlight-box fade-in">
+          <p>
+            Refleksi diri merupakan bagian penting dari pertumbuhan profesional seorang pendidik. Melalui refleksi yang jujur dan mendalam, saya mampu mengidentifikasi kekuatan yang perlu dipertahankan, kelemahan yang harus diperbaiki, serta merumuskan rencana konkret untuk terus berkembang menuju guru yang profesional dan bermakna bagi peserta didik.
+          </p>
+        </div>
+
+        <div class="refleksi-diri-grid fade-in">
+          <!-- Kekuatan -->
+          <div class="rd-card">
+            <div class="rd-card-header">
+              <div class="rd-card-icon rd-card-icon--a">
+                <i class="fa-solid fa-circle-check"></i>
+              </div>
+              <div class="rd-card-title">Kekuatan Diri</div>
+            </div>
+            <div class="rd-card-body">
+              <ul>
+                <li>Memiliki pengalaman industri nyata yang relevan dengan materi TIK/Informatika sehingga pembelajaran selalu kontekstual</li>
+                <li>Kemampuan beradaptasi cepat terhadap dinamika kelas dan permasalahan teknis yang tidak terduga</li>
+                <li>Komitmen tinggi untuk terus belajar dan memperbaiki pendekatan mengajar setiap siklus</li>
+                <li>Kemampuan membangun hubungan positif dengan siswa melalui pendekatan empatis dan komunikasi terbuka</li>
+                <li>Penguasaan teknologi dan media digital yang kuat untuk mendukung pembelajaran inovatif</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Kelemahan -->
+          <div class="rd-card">
+            <div class="rd-card-header">
+              <div class="rd-card-icon rd-card-icon--b">
+                <i class="fa-solid fa-circle-exclamation"></i>
+              </div>
+              <div class="rd-card-title">Kelemahan yang Perlu Diperbaiki</div>
+            </div>
+            <div class="rd-card-body">
+              <ul>
+                <li>Manajemen waktu pembelajaran yang masih perlu diperkuat, terutama saat menghadapi kondisi kelas yang dinamis</li>
+                <li>Kemampuan merancang asesmen formatif yang komprehensif masih dalam tahap pengembangan</li>
+                <li>Perlu meningkatkan kemampuan diferensiasi instruksional untuk melayani keberagaman kemampuan siswa secara lebih sistematis</li>
+                <li>Kadang terlalu fokus pada konten teknis sehingga aspek afektif dan karakter siswa kurang diperhatikan secara eksplisit</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pengalaman berkesan -->
+        <h3 class="section-eyebrow fade-in" style="margin-top:2rem;">
+          <i class="fa-solid fa-heart" style="color:var(--accent2);margin-right:0.5rem;"></i>
+          Pengalaman Paling Berkesan
+        </h3>
+        <div class="narrative fade-in">
+          <p>
+            Pengalaman paling berkesan selama PPL Terbimbing terjadi pada Siklus 2 ketika siswa secara spontan berdebat sengit tentang etika media digital menggunakan kasus berita hoaks yang saya tampilkan sebagai apersepsi. Selama hampir 15 menit, diskusi berlangsung tanpa saya pandu — siswa saling mematahkan argumen, mengutip contoh dari kehidupan sehari-hari mereka, dan tiba-tiba kelas berubah menjadi ruang dialog yang hidup dan bermakna. Di momen itulah saya menyadari bahwa mengajar yang sesungguhnya bukan tentang saya yang berbicara, melainkan tentang menciptakan kondisi di mana siswa berani berpikir dan berbicara sendiri.
+          </p>
+          <p>
+            Pengalaman lain yang tidak kalah berkesan adalah menyaksikan kelompok yang paling lambat di Siklus 1 — mereka yang frustrasi dan hampir menyerah saat instalasi WordPress gagal — berhasil menyelesaikan tugas presentasi HAKI dengan kualitas terbaik di Siklus 3. Transformasi mereka mengingatkan saya bahwa tugas terpenting seorang guru adalah menjaga kepercayaan diri siswa tetap menyala, bahkan di tengah kesulitan sekalipun.
+          </p>
+        </div>
+
+        <!-- Rencana Tindak Lanjut Konkret -->
+        <h3 class="section-eyebrow fade-in" style="margin-top:2rem;">
+          <i class="fa-solid fa-list-check" style="color:var(--accent3);margin-right:0.5rem;"></i>
+          Rencana Tindak Lanjut Konkret
+        </h3>
+        <div class="card-grid card-grid-2 card-grid--spaced fade-in">
+          <div class="card">
+            <div class="card-icon"><i class="fa-solid fa-clock-rotate-left" style="color:var(--accent);"></i></div>
+            <div class="card-title">Penguatan Manajemen Waktu</div>
+            <div class="card-body">Menerapkan teknik time-boxing dengan timer visual di setiap fase pembelajaran dan mendokumentasikan efektivitasnya dalam jurnal mengajar mingguan.</div>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="fa-solid fa-sliders" style="color:var(--accent2);"></i></div>
+            <div class="card-title">Asesmen Berdiferensiasi</div>
+            <div class="card-body">Merancang instrumen asesmen berbasis portofolio digital siswa yang memungkinkan penilaian proses, bukan hanya hasil akhir, menggunakan Google Sites atau Padlet.</div>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="fa-solid fa-people-group" style="color:var(--accent3);"></i></div>
+            <div class="card-title">Komunitas Belajar Guru</div>
+            <div class="card-body">Bergabung aktif dalam komunitas praktisi guru TIK (MGMP TIK) untuk berbagi strategi pembelajaran, mendapatkan umpan balik, dan terus memperbarui wawasan pedagogik.</div>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="fa-solid fa-book-open-reader" style="color:var(--accent);"></i></div>
+            <div class="card-title">Literasi Pedagogi Lanjutan</div>
+            <div class="card-body">Mendalami literatur tentang Universal Design for Learning (UDL) dan Culturally Responsive Teaching sebagai kerangka diferensiasi yang lebih inklusif dan kontekstual.</div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>E-Portfolio PPL Terbimbing · <span>Arbiansyah</span></p>
+      <p class="footer-subtitle">
+        Pendidikan Profesi Guru · Universitas Islam Makassar · 2026
+      </p>
+    </footer>
+
+    <button
+      class="back-to-top"
+      id="back-to-top"
+      type="button"
+      aria-label="Kembali ke atas"
+    >
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <div
+      class="modal"
+      id="media-modal"
+      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div class="modal-backdrop" data-modal-close></div>
+      <div class="modal-panel" role="document">
+        <div class="modal-header">
+          <div class="modal-title">Preview</div>
+          <div class="modal-header-actions">
+            <a
+              class="modal-ext"
+              id="modal-ext"
+              target="_blank"
+              rel="noopener noreferrer"
+              hidden
+            >
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              <span>Buka</span>
+            </a>
+            <button class="modal-close" type="button" data-modal-close>
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+        </div>
+        <div class="modal-content"></div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/animejs/dist/bundles/anime.umd.min.js"></script>
+  </body>
+  <script src="assets/js/main.js"></script>
+</html>

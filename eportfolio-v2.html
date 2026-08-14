@@ -1,0 +1,1410 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-Portfolio 2 – Refleksi Akhir PPL Terbimbing · Arbiansyah</title>
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Instrument+Serif:ital@0;1&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome 6 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        corePlugins: { preflight: false },
+        prefix: "tw-",
+      };
+    </script>
+    <!-- Shared stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <style>
+      /* ── Animasi tambahan untuk eportfolio-v2 ── */
+      .hero-tag-icon {
+        display: inline-block;
+        animation: pulse-glow-v2 2.4s ease-in-out infinite;
+      }
+      @keyframes pulse-glow-v2 {
+        0%,
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+        50% {
+          transform: scale(1.25);
+          opacity: 0.7;
+        }
+      }
+
+      /* QA badge */
+      .qa-q {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+      }
+      .qa-q-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        background: var(--accent2);
+        color: #fff;
+        font-size: 0.75rem;
+        flex-shrink: 0;
+        box-shadow: 0 0 0 3px
+          color-mix(in srgb, var(--accent2) 20%, transparent);
+      }
+
+      /* Filosofi block icon prefix */
+      .filosifi-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.2rem;
+        height: 2.2rem;
+        border-radius: 0.5rem;
+        margin-right: 0.75rem;
+        font-size: 1rem;
+        vertical-align: middle;
+        flex-shrink: 0;
+      }
+      .filosifi-block {
+        display: flex;
+        align-items: flex-start;
+        gap: 0;
+      }
+      .filosifi-block-text {
+        flex: 1;
+      }
+
+      /* Entrance animations */
+      .anime-hero-tag {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      .anime-hero-h1 {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      .anime-hero-title {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      .anime-hero-quote {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      /* QA item reveal */
+      .qa-item {
+        opacity: 0;
+        transform: translateX(-24px);
+        transition:
+          opacity 0.55s ease,
+          transform 0.55s ease;
+      }
+      .qa-item.visible {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      /* Filosifi block stagger */
+      .filosifi-block {
+        opacity: 0;
+        transform: translateY(28px);
+        transition:
+          opacity 0.6s ease,
+          transform 0.6s ease;
+      }
+      .filosifi-block.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Number counter badge for questions */
+      .qa-number {
+        font-variant-numeric: tabular-nums;
+        font-family: "Space Mono", monospace;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+      }
+
+      /* Section divider line animate */
+      .section-divider {
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--accent2),
+          transparent
+        );
+        margin: 2rem 0;
+        transform: scaleX(0);
+        transform-origin: center;
+        opacity: 0;
+        transition:
+          transform 0.8s ease,
+          opacity 0.8s ease;
+      }
+      .section-divider.visible {
+        transform: scaleX(1);
+        opacity: 1;
+      }
+
+      /* Highlight box animated left border */
+      .highlight-box {
+        border-left: 3px solid transparent;
+        transition: border-color 0.6s ease 0.3s;
+      }
+      .highlight-box.visible {
+        border-color: var(--accent);
+      }
+
+      /* ─── Tambahan section: Rencana Tindak Lanjut ─── */
+      .rtl-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 1rem;
+        margin-top: 1.5rem;
+      }
+      .rtl-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 1.4rem 1.5rem;
+        border-top: 3px solid var(--accent);
+        transition:
+          transform 0.25s,
+          box-shadow 0.25s,
+          border-color 0.25s;
+      }
+      .rtl-card:nth-child(2) {
+        border-top-color: var(--accent2);
+      }
+      .rtl-card:nth-child(3) {
+        border-top-color: var(--accent3);
+      }
+      .rtl-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 14px 34px rgba(0, 0, 0, 0.16);
+      }
+      .rtl-card-icon {
+        font-size: 1.5rem;
+        margin-bottom: 0.8rem;
+        color: var(--accent);
+      }
+      .rtl-card:nth-child(2) .rtl-card-icon {
+        color: var(--accent2);
+      }
+      .rtl-card:nth-child(3) .rtl-card-icon {
+        color: var(--accent3);
+      }
+      .rtl-card-title {
+        font-weight: 700;
+        font-size: 0.95rem;
+        margin-bottom: 0.5rem;
+        color: var(--text);
+      }
+      .rtl-card-body {
+        font-size: 0.85rem;
+        color: var(--muted);
+        line-height: 1.65;
+      }
+
+      /* ─── Pencapaian stats ─── */
+      .stats-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin: 1.8rem 0;
+      }
+      .stat-chip {
+        background: var(--surface2);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 1rem 1.4rem;
+        text-align: center;
+        flex: 1;
+        min-width: 120px;
+      }
+      .stat-chip-val {
+        font-family: "Space Mono", monospace;
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: var(--accent);
+        line-height: 1;
+        margin-bottom: 0.3rem;
+      }
+      .stat-chip:nth-child(2) .stat-chip-val {
+        color: var(--accent2);
+      }
+      .stat-chip:nth-child(3) .stat-chip-val {
+        color: var(--accent3);
+      }
+      .stat-chip:nth-child(4) .stat-chip-val {
+        color: var(--accent);
+      }
+      .stat-chip-label {
+        font-size: 0.72rem;
+        color: var(--muted);
+        font-family: "Space Mono", monospace;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      /* Prinsip guru cards */
+      .prinsip-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.7rem;
+        margin-top: 1.2rem;
+      }
+      .prinsip-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+        padding: 0.9rem 1.1rem;
+        background: var(--surface2);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        font-size: 0.88rem;
+        color: var(--muted);
+        line-height: 1.55;
+        transition: border-color 0.2s;
+      }
+      .prinsip-list li:hover {
+        border-color: rgba(34, 211, 238, 0.3);
+      }
+      .prinsip-list li .prinsip-icon {
+        color: var(--accent);
+        flex-shrink: 0;
+        margin-top: 0.1rem;
+        font-size: 0.9rem;
+      }
+      .prinsip-list li strong {
+        color: var(--text);
+      }
+
+      /* Scroll-reveal for staggered groups (scoped to .js-reveal so content
+         stays visible if JavaScript fails to run) */
+      .js-reveal .rtl-card,
+      .js-reveal .stat-chip,
+      .js-reveal .prinsip-list li {
+        opacity: 0;
+        transform: translateY(22px);
+        transition:
+          opacity 0.6s ease,
+          transform 0.6s ease;
+      }
+      .js-reveal .rtl-card.visible,
+      .js-reveal .stat-chip.visible,
+      .js-reveal .prinsip-list li.visible {
+        opacity: 1;
+        transform: none;
+      }
+
+      /* Modal mobile override (bottom-sheet) */
+      @media (max-width: 768px) {
+        .modal {
+          padding: 0;
+          align-items: flex-end;
+        }
+        .modal-panel {
+          width: 100vw;
+          max-height: 92vh;
+          border-radius: 20px 20px 0 0;
+          border-bottom: none;
+        }
+        .modal-panel::before {
+          content: "";
+          display: block;
+          width: 2.5rem;
+          height: 4px;
+          background: var(--border);
+          border-radius: 99px;
+          margin: 0.6rem auto -0.3rem;
+          flex-shrink: 0;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="progress-bar" id="progress-bar"></div>
+
+    <!-- ═══════ NAV ═══════ -->
+    <nav>
+      <div class="logo">PPG (Pendidikan Profesi Guru)</div>
+      <ul class="nav-links">
+        <!-- Link kembali ke E-Portfolio 1 -->
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">
+            <i class="fa-solid fa-house tw-mr-1"></i> E-Portfolio 1
+          </a>
+        </li>
+
+        <!-- Submenu E-Portfolio 2 -->
+        <li class="nav-item has-submenu">
+          <a class="nav-link" href="#portfolio-2">
+            <i class="fa-solid fa-file-circle-check tw-mr-1"></i> E-Portfolio 2
+            <i class="fa-solid fa-chevron-down nav-chevron"></i>
+          </a>
+          <ul class="submenu">
+            <li>
+              <a class="nav-link nav-sublink" href="#refleksi-akhir">
+                <i
+                  class="fa-solid fa-pen-to-square tw-mr-1"
+                  style="color: var(--accent2)"
+                ></i>
+                Refleksi Akhir
+              </a>
+            </li>
+            <li>
+              <a class="nav-link nav-sublink" href="#pencapaian">
+                <i
+                  class="fa-solid fa-trophy tw-mr-1"
+                  style="color: var(--accent)"
+                ></i>
+                Pencapaian &amp; Data
+              </a>
+            </li>
+            <li>
+              <a class="nav-link nav-sublink" href="#rencana-tindak-lanjut">
+                <i
+                  class="fa-solid fa-rocket tw-mr-1"
+                  style="color: var(--accent3)"
+                ></i>
+                Rencana Tindak Lanjut
+              </a>
+            </li>
+            <li>
+              <a class="nav-link nav-sublink" href="#filosofi-mengajar">
+                <i
+                  class="fa-solid fa-lightbulb tw-mr-1"
+                  style="color: var(--accent3)"
+                ></i>
+                Filosofi Mengajar
+              </a>
+            </li>
+            <li>
+              <a class="nav-link nav-sublink" href="#prinsip-guru">
+                <i
+                  class="fa-solid fa-star tw-mr-1"
+                  style="color: var(--accent)"
+                ></i>
+                Prinsip Guru Profesional
+              </a>
+            </li>
+            <li>
+              <a class="nav-link nav-sublink" href="#refleksi-diri-v2">
+                <i
+                  class="fa-solid fa-mirror tw-mr-1"
+                  style="color: var(--accent2)"
+                ></i>
+                Refleksi Diri
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <div class="nav-actions">
+        <button
+          class="theme-toggle"
+          id="theme-toggle"
+          type="button"
+          aria-pressed="false"
+        >
+          <span class="theme-icon"><i class="fa-solid fa-moon"></i></span>
+          <span class="theme-text">Gelap</span>
+        </button>
+        <button
+          class="hamburger"
+          id="hamburger"
+          aria-label="Buka menu"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+    <div class="nav-overlay" id="nav-overlay"></div>
+
+    <main>
+      <!-- ═══════ HERO ═══════ -->
+      <section class="hero">
+        <div class="hero-grid"></div>
+        <div class="hero-glow"></div>
+        <div class="hero-content">
+          <div class="hero-tag anime-hero-tag">
+            <span class="hero-tag-icon"
+              ><i class="fa-solid fa-star-of-life"></i
+            ></span>
+            E-Portfolio 2 &middot; Refleksi Akhir PPL Terbimbing · 2026
+          </div>
+          <h1 class="hero-name anime-hero-h1">E-Portfolio <span>02</span></h1>
+          <p class="hero-title anime-hero-title">
+            Merumuskan Prinsip &amp; Nilai Guru Profesional
+          </p>
+          <blockquote class="hero-quote anime-hero-quote">
+            <i
+              class="fa-solid fa-quote-left"
+              style="opacity: 0.4; margin-right: 0.4rem; font-size: 0.9rem"
+            ></i>
+            Cara terbaik untuk belajar adalah dengan mengajarkan kepada orang
+            lain.
+            <i
+              class="fa-solid fa-quote-right"
+              style="opacity: 0.4; margin-left: 0.4rem; font-size: 0.9rem"
+            ></i>
+          </blockquote>
+          <div class="hero-meta" style="margin-top: 2rem">
+            <div class="meta-chip">
+              <i
+                class="fa-solid fa-user"
+                style="color: var(--accent3); font-size: 0.8rem"
+              ></i>
+              Arbiansyah
+            </div>
+            <div class="meta-chip">
+              <i
+                class="fa-solid fa-university"
+                style="color: var(--accent3); font-size: 0.8rem"
+              ></i>
+              Universitas Islam Makassar
+            </div>
+            <div class="meta-chip">
+              <i
+                class="fa-solid fa-calendar-check"
+                style="color: var(--accent3); font-size: 0.8rem"
+              ></i>
+              PPG 2025–2026
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════ INTRO ═══════ -->
+      <section class="section" id="portfolio-2">        <div class="section-label fade-in">E-Portfolio 2</div>
+        <h2 class="section-title fade-in">
+          Refleksi Akhir <span class="section-accent">PPL Terbimbing</span>
+        </h2>
+        <div class="highlight-box fade-in">
+          <p>
+            E-Portfolio 2 merupakan
+            <strong class="text-strong">refleksi akhir</strong> yang merumuskan
+            prinsip dan nilai seorang guru sebagai buah dari pengalaman PPL
+            Terbimbing secara menyeluruh. Disusun sebagai narasi pertumbuhan
+            profesional yang mencakup pembelajaran yang diperoleh, tantangan
+            yang dihadapi, umpan balik dari Guru Pamong, serta filosofi mengajar
+            yang terbentuk selama tiga siklus praktik mengajar.
+          </p>
+          <p>
+            Unsur penilaian E-Portfolio meliputi kedalaman refleksi diri,
+            kemampuan merumuskan prinsip mengajar, analisis pertumbuhan
+            kompetensi, dan kesiapan untuk PPL Mandiri berikutnya.
+          </p>
+        </div>
+      </section>
+
+      <!-- ═══════ REFLEKSI AKHIR ═══════ -->
+      <section class="section" id="refleksi-akhir" data-section>
+        <div class="section-label section-label--accent2 fade-in">Bagian 1</div>
+        <h2 class="section-title fade-in">
+          <i
+            class="fa-solid fa-pen-nib"
+            style="
+              color: var(--accent2);
+              margin-right: 0.5rem;
+              font-size: 0.85em;
+            "
+          ></i>
+          Refleksi Akhir <span class="section-accent2">PPL Terbimbing</span>
+        </h2>
+        <div class="section-divider fade-in"></div>
+
+        <!-- Q1 -->
+        <div class="qa-item">
+          <div class="qa-q">
+            <span class="qa-q-icon">
+              <i class="fa-solid fa-circle-question"></i>
+            </span>
+            <span class="qa-number">Pertanyaan 1</span>
+          </div>
+          <div class="artefak-heading qa-heading">
+            Apa yang telah saya pelajari sebagai peserta PPG calon guru selama
+            tahapan PPL Terbimbing dari awal hingga akhir?
+          </div>
+          <div class="qa-a">
+            <p>
+              Selama PPL Terbimbing, saya belajar bahwa mengajar adalah proses
+              yang terus berkembang dan menuntut adaptasi di setiap tahapannya.
+              Perjalanan tiga siklus mengajarkan saya secara nyata bagaimana
+              mengelola kelas TIK/Informatika SMK yang memiliki dinamika unik
+              mulai dari tantangan teknis, pengelolaan antusiasme siswa, hingga
+              pembentukan ekosistem belajar yang mandiri dan kondusif.
+            </p>
+            <br />
+            <p>
+              Pada siklus pertama (Modul WordPress), saya belajar bahwa kesiapan
+              teknis dan pengelolaan kelas harus berjalan beriringan. Pengalaman
+              menghadapi berbagai kendala instalasi mengajarkan bahwa guru TIK
+              perlu menyiapkan skenario cadangan dan panduan troubleshooting
+              sebelum pembelajaran dimulai. Saya juga menyadari pentingnya
+              merancang struktur kerja kelompok yang eksplisit pembagian peran,
+              aturan suara, dan batasan gerak agar pembelajaran tetap kondusif
+              meskipun materinya bersifat praktik.
+            </p>
+            <br />
+            <p>
+              Pada siklus kedua (Modul Search Engine &amp; Media Digital),
+              pelajaran terbesar adalah cara mengelola energi positif siswa
+              secara produktif. Antusiasme siswa adalah aset belajar, tetapi
+              tanpa struktur yang jelas ia dapat menjadi hambatan manajemen
+              waktu. Saya mempelajari pentingnya memberikan batas waktu visual,
+              menetapkan time-keeper dalam setiap kelompok, dan membuat kontrak
+              kelompok sebagai panduan perilaku bersama.
+            </p>
+            <br />
+            <p>
+              Pada siklus ketiga (Microsoft Office &amp; HAKI), saya mempelajari
+              bahwa literasi instruksional siswa perlu dilatih secara
+              sistematis. Kebiasaan langsung bertanya tanpa membaca instruksi
+              terlebih dahulu harus diubah agar siswa mampu belajar secara
+              mandiri. Saya juga menemukan bahwa sistem tutor sebaya yang
+              terstruktur adalah strategi diferensiasi yang sangat efektif untuk
+              kelas dengan kemampuan awal yang beragam. Secara keseluruhan, PPL
+              Terbimbing mengajarkan saya bahwa mengajar bukan sekadar
+              menyampaikan konten teknis, melainkan tentang membangun ekosistem
+              belajar yang adaptif, terstruktur, dan benar-benar berpusat pada
+              siswa.
+            </p>
+          </div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="qa-item">
+          <div class="qa-q">
+            <span
+              class="qa-q-icon"
+              style="
+                background: var(--accent3);
+                box-shadow: 0 0 0 3px
+                  color-mix(in srgb, var(--accent3) 20%, transparent);
+              "
+            >
+              <i class="fa-solid fa-triangle-exclamation"></i>
+            </span>
+            <span class="qa-number">Pertanyaan 2</span>
+          </div>
+          <div class="artefak-heading qa-heading">
+            Apakah terdapat pengalaman yang menantang dan bagaimana solusi dari
+            permasalahan tersebut?
+          </div>
+          <div class="qa-a">
+            <p>
+              Tantangan terbesar pertama muncul di Siklus 1, ketika kendala
+              teknis instalasi WordPress mengonsumsi hampir seluruh waktu
+              pembelajaran. Error konfigurasi port, perbedaan spesifikasi
+              perangkat keras, dan ketidaksesuaian versi sistem operasi membuat
+              proses troubleshooting berlangsung tanpa henti. Di saat yang sama,
+              siswa yang tertinggal menjadi tidak fokus dan kelas mulai ribut.
+              Target utama pembelajaran membuat Post dan Page di WordPress sama
+              sekali tidak tercapai.
+            </p>
+            <br />
+            <p>
+              Solusi yang saya terapkan di siklus berikutnya adalah menyiapkan
+              skenario troubleshooting umum secara tertulis, mengganti modul PDF
+              statis dengan panduan visual bergambar yang dapat diakses mandiri
+              melalui QR code, serta menerapkan sistem tutor sebaya di mana
+              siswa yang lebih cepat mendampingi rekannya yang tertinggal. Tempo
+              demonstrasi juga disesuaikan dengan kemampuan rata-rata kelas.
+            </p>
+            <br />
+            <p>
+              Tantangan berbeda muncul di Siklus 2: antusiasme berlebihan siswa
+              justru menjadi sumber gangguan. Beberapa kelompok berdebat desain
+              terlalu lama, anggota bergerak bebas antar meja, dan batas waktu
+              diabaikan. Sesi refleksi dan penutupan tidak dapat dilakukan
+              secara optimal karena waktu kerja kelompok yang tidak terkendali.
+              Respons saya adalah menerapkan sistem time-keeper formal,
+              menampilkan hitungan mundur di layar proyektor, dan membuat
+              kontrak kelompok yang berisi kesepakatan batas suara serta
+              larangan berpindah tempat.
+            </p>
+            <br />
+            <p>
+              Di Siklus 3, tantangan yang tersisa bersifat lebih halus namun
+              fundamental: kecenderungan siswa melakukan copy-paste tanpa
+              memahami konteks dan etika sitasi, serta kesulitan sebagian siswa
+              dalam memahami logika rumus lanjutan Microsoft Excel (VLOOKUP
+              bersarang, IF bertingkat). Untuk mengatasi ini, saya menyiapkan
+              kuis singkat berbasis HAKI sebagai <em>reinforcement</em> di akhir
+              sesi dan mengembangkan lembar referensi khusus Excel dengan bahasa
+              sederhana dan contoh visual.
+            </p>
+          </div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="qa-item">
+          <div class="qa-q">
+            <span
+              class="qa-q-icon"
+              style="
+                background: var(--accent);
+                box-shadow: 0 0 0 3px
+                  color-mix(in srgb, var(--accent) 20%, transparent);
+              "
+            >
+              <i class="fa-solid fa-chart-line"></i>
+            </span>
+            <span class="qa-number">Pertanyaan 3</span>
+          </div>
+          <div class="artefak-heading qa-heading">
+            Bagaimana perubahan kompetensi yang dirasakan selama PPL Terbimbing dari awal hingga akhir?
+          </div>
+          <div class="qa-a">
+            <p>
+              Perubahan kompetensi yang saya rasakan selama PPL Terbimbing berlangsung secara bertahap dan nyata. Pada awal siklus pertama, saya datang dengan bekal pengetahuan teknis yang kuat namun minim pengalaman pedagogis formal. Saya terlalu yakin bahwa pemahaman materi yang baik otomatis akan menghasilkan pembelajaran yang efektif — sebuah asumsi yang langsung dipatahkan oleh realitas kelas di hari pertama mengajar.
+            </p>
+            <br />
+            <p>
+              Secara kompetensi pedagogik, saya mengalami lompatan signifikan dalam kemampuan merancang pembelajaran yang berpusat pada siswa. Dari modul yang awalnya terlalu padat dan teoritis, saya belajar menyederhanakan struktur, menambahkan panduan visual, dan merancang LKPD yang memandu tanpa membelenggu kreativitas siswa. Proses diferensiasi — yang awalnya terasa abstrak — menjadi konkret ketika saya mulai mengenal karakteristik masing-masing kelompok belajar secara lebih mendalam.
+            </p>
+            <br />
+            <p>
+              Dari sisi kompetensi sosial dan kepribadian, PPL mengajarkan saya tentang kesabaran, kehadiran penuh di kelas, dan pentingnya membangun kepercayaan siswa sebelum membangun pengetahuan mereka. Saya juga menyadari bahwa kemampuan mendengarkan — bukan hanya berbicara — adalah keterampilan pedagogik yang paling berharga. Di siklus ketiga, saya merasakan perbedaan yang jelas: siswa lebih nyaman bertanya, lebih berani mengemukakan pendapat, dan lebih mandiri dalam belajar. Itulah bukti nyata bahwa perubahan kompetensi saya berdampak langsung pada kualitas ekosistem belajar di kelas.
+            </p>
+          </div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="qa-item">
+          <div class="qa-q">
+            <span
+              class="qa-q-icon"
+              style="
+                background: var(--accent);
+                box-shadow: 0 0 0 3px
+                  color-mix(in srgb, var(--accent) 20%, transparent);
+              "
+            >
+              <i class="fa-solid fa-comment-dots"></i>
+            </span>
+            <span class="qa-number">Pertanyaan 4</span>
+          </div>
+          <div class="artefak-heading qa-heading">
+            Apakah umpan balik atau saran konstruktif yang diberikan kepada
+            mahasiswa sebagai bentuk perbaikan untuk tahap PPL selanjutnya?
+          </div>
+          <div class="qa-a">
+            <p>
+              Guru Pamong memberikan umpan balik yang konstruktif dan
+              terstruktur di setiap akhir siklus. Pada Siklus 1, beliau
+              menegaskan bahwa kemampuan membaca situasi kelas dan merespons
+              secara cepat adalah kompetensi guru yang tidak boleh diabaikan.
+              Beliau menyarankan agar saya merancang tata tertib kerja kelompok
+              yang eksplisit termasuk larangan berpindah dari meja kelompok,
+              batasan suara, dan pembagian peran yang tegas (ketua, notulen,
+              teknisi) serta menyiapkan panduan visual langkah-demi-langkah yang
+              lebih terstruktur agar beban troubleshooting tidak hanya bertumpu
+              pada guru.
+            </p>
+            <br />
+            <p>
+              Pada Siklus 2, Guru Pamong mengapresiasi peningkatan keterlibatan
+              dan variatifnya metode pembelajaran, namun mengingatkan bahwa
+              mengendalikan ketertiban kelas saat diskusi bebas adalah
+              kompetensi yang harus terus diasah. Beliau menyarankan penerapan
+              sistem time-keeper resmi di setiap kelompok, pemberian sinyal
+              visual atau bunyi sebagai penanda waktu, dan penetapan aturan
+              posisi duduk yang ketat. Manajemen waktu tiap fase pembelajaran
+              juga perlu dipertegas dengan batas waktu yang tertulis di papan
+              tulis atau ditampilkan di layar proyektor.
+            </p>
+            <br />
+            <p>
+              Pada Siklus 3, Guru Pamong mengapresiasi perkembangan yang
+              konsisten sepanjang tiga siklus dari pengelolaan teknis, dinamika
+              kelompok, hingga kelas yang kondusif. Catatan terpenting yang
+              beliau sampaikan sebagai bekal PPL Mandiri adalah:
+              <strong class="text-strong"
+                >literasi instruksional siswa perlu dilatih secara lebih
+                sistematis</strong
+              >. Banyak siswa yang langsung bertanya tanpa membaca instruksi di
+              modul terlebih dahulu. Beliau menyarankan agar saya membiasakan
+              siswa membaca instruksi secara mandiri dan tuntas sebelum memulai
+              praktik misalnya dengan meminta perwakilan siswa membacakan
+              instruksi dengan lantang di depan kelas sebagai fondasi penting
+              bagi kemandirian belajar yang sejati.
+            </p>
+          </div>
+        </div>
+
+        <!-- UMPAN BALIK DPL -->
+        <div class="section-label section-label--accent2 fade-in" style="margin-top:2rem;">Umpan Balik DPL</div>
+        <h3 class="section-title fade-in" style="font-size:1.3rem;">
+          <i class="fa-solid fa-user-tie" style="color:var(--accent2);margin-right:0.5rem;font-size:0.9em;"></i>
+          Umpan Balik <span class="section-accent2">Dosen Pembimbing Lapangan</span>
+        </h3>
+        <div class="dpl-feedback-box fade-in">
+          <h4><i class="fa-solid fa-comments"></i> Penilaian dan Saran dari DPL</h4>
+          <p>
+            Dosen Pembimbing Lapangan mengapresiasi komitmen dan konsistensi saya dalam mendokumentasikan setiap siklus pembelajaran secara rinci dan reflektif. Perkembangan yang tampak dari kualitas refleksi — dari yang bersifat deskriptif di siklus pertama menjadi analitis-kritis di siklus ketiga — dinilai sebagai tanda pertumbuhan profesional yang nyata dan menggembirakan.
+          </p>
+          <p>
+            DPL memberikan catatan penting bahwa kemampuan saya dalam mengintegrasikan teknologi ke dalam pembelajaran (TPACK) sudah terlihat kuat, namun perlu diimbangi dengan penguatan kompetensi dalam merancang <strong>asesmen autentik</strong> yang benar-benar mengukur capaian pembelajaran secara holistik — tidak hanya aspek kognitif, tetapi juga psikomotorik dan afektif. Selain itu, DPL mendorong saya untuk lebih aktif membangun jejaring dengan komunitas guru TIK di tingkat regional dan nasional sebagai wahana berbagi praktik baik dan percepatan pengembangan profesional berkelanjutan.
+          </p>
+          <p>
+            Secara keseluruhan, DPL menyatakan bahwa saya telah menunjukkan kesiapan yang baik untuk melanjutkan ke tahap PPL Mandiri, dengan syarat terus mempertahankan semangat reflektif dan terbuka terhadap umpan balik dari berbagai sumber.
+          </p>
+        </div>
+      </section>
+
+      <!-- ═══════ PENCAPAIAN & DATA ═══════ -->
+      <section class="section" id="pencapaian" data-section>
+        <div class="section-label section-label--accent2 fade-in">Bagian 2</div>
+        <h2 class="section-title fade-in">
+          <i
+            class="fa-solid fa-trophy"
+            style="
+              color: var(--accent);
+              margin-right: 0.5rem;
+              font-size: 0.85em;
+            "
+          ></i>
+          Pencapaian <span class="section-accent">Selama PPL Terbimbing</span>
+        </h2>
+        <div class="section-divider fade-in"></div>
+
+        <p class="section-lead fade-in">
+          Ringkasan data kuantitatif dan kualitatif yang menggambarkan
+          perkembangan praktik mengajar selama tiga siklus PPL Terbimbing.
+        </p>
+
+        <!-- Stats Row -->
+        <div class="stats-row fade-in">
+          <div class="stat-chip">
+            <div class="stat-chip-val">12</div>
+            <div class="stat-chip-label">Pertemuan</div>
+          </div>
+          <div class="stat-chip">
+            <div class="stat-chip-val">5</div>
+            <div class="stat-chip-label">Modul Ajar</div>
+          </div>
+          <div class="stat-chip">
+            <div class="stat-chip-val">3</div>
+            <div class="stat-chip-label">Siklus PPL</div>
+          </div>
+          <div class="stat-chip">
+            <div class="stat-chip-val">B+</div>
+            <div class="stat-chip-label">Rerata Nilai GP</div>
+          </div>
+        </div>
+
+        <div class="card-grid card-grid-2 card-grid--spaced fade-in">
+          <div class="card">
+            <div class="card-icon">
+              <i
+                class="fa-solid fa-chart-line"
+                style="color: var(--accent)"
+              ></i>
+            </div>
+            <div class="card-title">Pertumbuhan Kompetensi Pedagogik</div>
+            <div class="card-body">
+              Dari siklus pertama hingga ketiga, terlihat peningkatan signifikan
+              dalam kemampuan merancang modul ajar yang diferensiatif, memilih
+              media pembelajaran yang tepat, dan mengelola dinamika kelas secara
+              efektif.
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-icon">
+              <i class="fa-solid fa-users" style="color: var(--accent2)"></i>
+            </div>
+            <div class="card-title">Dampak terhadap Siswa</div>
+            <div class="card-body">
+              Siswa menunjukkan peningkatan keaktifan, antusiasme, dan kualitas
+              produk belajar dari siklus ke siklus. Pendekatan berbasis proyek
+              nyata terbukti meningkatkan motivasi dan rasa kepemilikan siswa
+              terhadap hasil kerjanya.
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-icon">
+              <i
+                class="fa-solid fa-book-open-reader"
+                style="color: var(--accent3)"
+              ></i>
+            </div>
+            <div class="card-title">Penerapan Teori Pedagogi</div>
+            <div class="card-body">
+              Berhasil mengintegrasikan kerangka PjBL, pembelajaran
+              berdiferensiasi, dan TPACK ke dalam praktik nyata di kelas, dengan
+              landasan refleksi kritis setiap akhir siklus.
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-icon">
+              <i class="fa-solid fa-handshake" style="color: var(--accent)"></i>
+            </div>
+            <div class="card-title">Kolaborasi Profesional</div>
+            <div class="card-body">
+              Membangun hubungan profesional yang produktif dengan Guru Pamong
+              dan dosen pembimbing melalui komunikasi terbuka, penerimaan umpan
+              balik yang konstruktif, dan komitmen untuk terus berkembang.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════ RENCANA TINDAK LANJUT ═══════ -->
+      <section class="section" id="rencana-tindak-lanjut" data-section>
+        <div class="section-label section-label--accent2 fade-in">Bagian 3</div>
+        <h2 class="section-title fade-in">
+          <i
+            class="fa-solid fa-rocket"
+            style="
+              color: var(--accent3);
+              margin-right: 0.5rem;
+              font-size: 0.85em;
+            "
+          ></i>
+          Rencana <span class="section-accent3">Tindak Lanjut</span>
+        </h2>
+        <div class="section-divider fade-in"></div>
+
+        <p class="section-lead fade-in">
+          Berdasarkan refleksi dan umpan balik yang diperoleh, berikut adalah
+          langkah konkret yang akan saya ambil untuk meningkatkan kualitas
+          mengajar pada tahap PPL berikutnya.
+        </p>
+
+        <div class="rtl-grid fade-in">
+          <div class="rtl-card">
+            <div class="rtl-card-icon">
+              <i class="fa-solid fa-clipboard-check"></i>
+            </div>
+            <div class="rtl-card-title">Penguatan Asesmen Formatif</div>
+            <div class="rtl-card-body">
+              Merancang sistem asesmen formatif yang lebih terstruktur meliputi
+              kuis singkat, observasi praktik, dan refleksi jurnal harian siswa
+              agar umpan balik dapat diberikan secara real-time dan tepat
+              sasaran.
+            </div>
+          </div>
+          <div class="rtl-card">
+            <div class="rtl-card-icon">
+              <i class="fa-solid fa-sliders"></i>
+            </div>
+            <div class="rtl-card-title">Diferensiasi Lebih Terstruktur</div>
+            <div class="rtl-card-body">
+              Mendokumentasikan dan menyempurnakan strategi diferensiasi
+              berdasarkan data kemampuan awal siswa, sehingga dapat direplikasi
+              dan dikembangkan oleh guru lain di sekolah.
+            </div>
+          </div>
+          <div class="rtl-card">
+            <div class="rtl-card-icon">
+              <i class="fa-solid fa-laptop-code"></i>
+            </div>
+            <div class="rtl-card-title">Integrasi Teknologi Interaktif</div>
+            <div class="rtl-card-body">
+              Mengembangkan modul digital interaktif berbasis platform seperti
+              Canva, Padlet, dan Google Workspace for Education untuk
+              menciptakan pengalaman belajar yang lebih menarik dan kolaboratif.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════ FILOSOFI MENGAJAR ═══════ -->
+      <section class="section" id="filosofi-mengajar" data-section>
+        <div class="section-label section-label--accent2 fade-in">Bagian 4</div>
+        <h2 class="section-title fade-in">
+          <i
+            class="fa-solid fa-lightbulb"
+            style="
+              color: var(--accent3);
+              margin-right: 0.5rem;
+              font-size: 0.85em;
+            "
+          ></i>
+          Filosofi <span class="section-accent2">Mengajar</span>
+        </h2>
+        <div class="section-divider fade-in"></div>
+
+        <div class="filosifi-block filosifi-block--accent2 fade-in">
+          <span
+            class="filosifi-icon"
+            style="
+              background: color-mix(in srgb, var(--accent2) 15%, transparent);
+              color: var(--accent2);
+            "
+          >
+            <i class="fa-solid fa-brain"></i>
+          </span>
+          <span class="filosifi-block-text">
+            Saya percaya bahwa pendidikan teknologi informasi bukan sekadar
+            mengajarkan cara menggunakan alat, melainkan
+            <strong class="text-strong">membangun cara berpikir</strong>.
+            Prinsip ini sejalan dengan konstruktivisme Vygotsky: pengetahuan
+            dibangun melalui pengalaman dan interaksi sosial, bukan sekadar
+            dipindahkan dari guru ke siswa. Seorang guru teknologi adalah
+            arsitek lingkungan belajar, bukan sekadar sumber informasi.
+          </span>
+        </div>
+
+        <div class="filosifi-block filosifi-block--accent3 fade-in">
+          <span
+            class="filosifi-icon"
+            style="
+              background: color-mix(in srgb, var(--accent3) 15%, transparent);
+              color: var(--accent3);
+            "
+          >
+            <i class="fa-solid fa-flask"></i>
+          </span>
+          <span class="filosifi-block-text">
+            Pengalaman tiga tahun di industri teknologi menguatkan keyakinan
+            bahwa
+            <strong class="text-strong"
+              >kompetensi sejati lahir dari keberanian mencoba, gagal, dan
+              mencoba lagi</strong
+            >. Gagasan John Dewey tentang <em>learning by doing</em> saya
+            wujudkan dalam kelas yang mendorong siswa bereksperimen,
+            menghasilkan karya nyata, dan belajar dari proses, bukan hanya dari
+            hasil akhir.
+          </span>
+        </div>
+
+        <div class="filosifi-block filosifi-block--accent fade-in">
+          <span
+            class="filosifi-icon"
+            style="
+              background: color-mix(in srgb, var(--accent) 15%, transparent);
+              color: var(--accent);
+            "
+          >
+            <i class="fa-solid fa-comments"></i>
+          </span>
+          <span class="filosifi-block-text">
+            Saya menghidupi prinsip dialog ala Paulo Freire: kelas adalah ruang
+            dialog, bukan ruang monolog.
+            <strong class="text-strong">Siswa adalah mitra belajar</strong>
+            yang membawa perspektif, pengalaman, dan kreativitas unik yang tidak
+            bisa diabaikan. Tugas saya adalah menyalakan api rasa ingin tahu
+            yang akan terus membimbing mereka bahkan setelah meninggalkan kelas.
+          </span>
+        </div>
+
+        <!-- PARAGRAF 4: Pandangan tentang Peserta Didik -->
+        <div class="filosifi-block filosifi-block--accent2 fade-in">
+          <span
+            class="filosifi-icon"
+            style="
+              background: color-mix(in srgb, var(--accent2) 15%, transparent);
+              color: var(--accent2);
+            "
+          >
+            <i class="fa-solid fa-people-group"></i>
+          </span>
+          <span class="filosifi-block-text">
+            Setiap peserta didik adalah individu dengan potensi unik, latar belakang beragam, dan kecepatan belajar yang berbeda-beda. Saya menolak pendekatan <em>"satu ukuran untuk semua"</em> dalam pembelajaran. Berlandaskan teori kecerdasan majemuk Howard Gardner, saya percaya bahwa kecerdasan hadir dalam berbagai bentuk — logis-matematis, linguistik, visual-spasial, kinestetik, dan lainnya. Tugas guru adalah merancang ruang belajar yang cukup luas untuk menampung semua bentuk kecerdasan tersebut, sehingga tidak ada satu pun siswa yang merasa tertinggal atau terabaikan.
+          </span>
+        </div>
+
+        <!-- PARAGRAF 5: Peran Guru Abad 21 -->
+        <div class="filosifi-block filosifi-block--accent3 fade-in">
+          <span
+            class="filosifi-icon"
+            style="
+              background: color-mix(in srgb, var(--accent3) 15%, transparent);
+              color: var(--accent3);
+            "
+          >
+            <i class="fa-solid fa-microchip"></i>
+          </span>
+          <span class="filosifi-block-text">
+            Di era kecerdasan buatan dan otomasi, <strong class="text-strong">peran guru bergeser dari penyampai informasi menjadi fasilitator kompetensi</strong>. Ketika informasi tersedia bebas di ujung jari, yang tidak bisa digantikan mesin adalah kemampuan berpikir kritis, kreativitas, kolaborasi, dan komunikasi — empat kompetensi inti abad 21. Guru teknologi abad 21 bukan hanya mengajarkan cara menggunakan alat digital, tetapi membimbing siswa untuk berpikir layaknya seorang problem solver: mengidentifikasi masalah, merancang solusi, menguji, dan memperbaikinya secara iteratif. Prinsip ini yang saya bawa ke setiap sesi pembelajaran.
+          </span>
+        </div>
+
+        <!-- PARAGRAF 6: Komitmen sebagai Calon Guru Profesional -->
+        <div class="filosifi-block filosifi-block--accent fade-in">
+          <span
+            class="filosifi-icon"
+            style="
+              background: color-mix(in srgb, var(--accent) 15%, transparent);
+              color: var(--accent);
+            "
+          >
+            <i class="fa-solid fa-hand-holding-heart"></i>
+          </span>
+          <span class="filosifi-block-text">
+            Sebagai calon guru profesional, saya berkomitmen untuk tidak pernah berhenti belajar. Dunia teknologi bergerak terlalu cepat untuk diiringi dengan cara pandang yang stagnan. Saya akan terus memperbarui pengetahuan konten, mendalami strategi pedagogik terkini, dan secara aktif mengintegrasikan umpan balik dari siswa, rekan sejawat, dan pemangku kepentingan dalam setiap siklus perbaikan. Karena bagi saya, menjadi guru bukan sekadar profesi — ia adalah panggilan untuk terus <strong class="text-strong">tumbuh bersama</strong> setiap generasi yang dipercayakan kepada kita.
+          </span>
+        </div>
+      </section>
+
+      <!-- ═══════ PRINSIP GURU PROFESIONAL ═══════ -->
+      <section class="section" id="prinsip-guru" data-section>
+        <div class="section-label section-label--accent2 fade-in">Bagian 5</div>
+        <h2 class="section-title fade-in">
+          <i
+            class="fa-solid fa-star"
+            style="
+              color: var(--accent);
+              margin-right: 0.5rem;
+              font-size: 0.85em;
+            "
+          ></i>
+          Prinsip <span class="section-accent">Guru Profesional</span>
+        </h2>
+        <div class="section-divider fade-in"></div>
+
+        <p class="section-lead fade-in">
+          Lima prinsip yang saya pegang sebagai fondasi menjadi guru
+          profesional, lahir dari refleksi mendalam selama PPL Terbimbing.
+        </p>
+
+        <ul class="prinsip-list fade-in">
+          <li>
+            <span class="prinsip-icon"
+              ><i class="fa-solid fa-arrows-rotate"></i
+            ></span>
+            <div>
+              <strong>Reflektif setiap saat.</strong> Guru yang baik tidak
+              berhenti belajar setelah jam mengajar usai. Ia mengevaluasi setiap
+              sesi, mencatat apa yang berhasil dan apa yang perlu diperbaiki,
+              lalu datang kembali dengan versi yang lebih baik.
+            </div>
+          </li>
+          <li>
+            <span class="prinsip-icon"><i class="fa-solid fa-heart"></i></span>
+            <div>
+              <strong>Empati sebagai fondasi.</strong> Sebelum mengajarkan ilmu,
+              seorang guru harus memahami kondisi, kebutuhan, dan tantangan yang
+              dihadapi siswanya. Empati membuka pintu komunikasi yang tulus dan
+              pembelajaran yang bermakna.
+            </div>
+          </li>
+          <li>
+            <span class="prinsip-icon"
+              ><i class="fa-solid fa-magnifying-glass"></i
+            ></span>
+            <div>
+              <strong>Relevansi di atas segalanya.</strong> Materi yang paling
+              canggih sekalipun tidak ada artinya jika tidak relevan dengan
+              kehidupan dan kebutuhan nyata siswa. Guru teknologi harus selalu
+              menghubungkan teori dengan praktik dunia kerja.
+            </div>
+          </li>
+          <li>
+            <span class="prinsip-icon"
+              ><i class="fa-solid fa-people-arrows"></i
+            ></span>
+            <div>
+              <strong>Kolaboratif dan terbuka.</strong> Guru bukan pulau
+              tersendiri. Kolaborasi dengan sesama guru, orang tua, dan
+              komunitas profesional adalah kunci pertumbuhan berkelanjutan yang
+              tidak bisa dicapai secara individual.
+            </div>
+          </li>
+          <li>
+            <span class="prinsip-icon"
+              ><i class="fa-solid fa-seedling"></i
+            ></span>
+            <div>
+              <strong>Menumbuhkan, bukan sekadar mengisi.</strong> Peran guru
+              bukan sebagai "pengisi" kepala siswa dengan informasi, tetapi
+              sebagai <em>nurturer</em> yang membantu potensi unik setiap siswa
+              bertumbuh dan berkembang secara optimal.
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <!-- ═══════ REFLEKSI DIRI ═══════ -->
+      <section class="section" id="refleksi-diri-v2" data-section>
+        <div class="section-label section-label--accent2 fade-in">Bagian 6</div>
+        <h2 class="section-title fade-in">
+          <i
+            class="fa-solid fa-mirror"
+            style="color: var(--accent2); margin-right: 0.5rem; font-size: 0.85em;"
+          ></i>
+          Refleksi Diri <span class="section-accent2">Komprehensif</span>
+        </h2>
+        <div class="section-divider fade-in"></div>
+
+        <p class="section-lead fade-in">
+          Penilaian jujur dan mendalam tentang kekuatan, kelemahan, pengalaman berkesan, serta rencana konkret pengembangan kompetensi sebagai calon guru profesional.
+        </p>
+
+        <div class="refleksi-diri-grid fade-in">
+          <div class="rd-card">
+            <div class="rd-card-header">
+              <div class="rd-card-icon rd-card-icon--a">
+                <i class="fa-solid fa-circle-check"></i>
+              </div>
+              <div class="rd-card-title">Kekuatan Diri</div>
+            </div>
+            <div class="rd-card-body">
+              <ul>
+                <li>Latar belakang industri teknologi memperkuat relevansi setiap konten yang diajarkan</li>
+                <li>Kemampuan adaptasi tinggi — cepat menyesuaikan strategi saat kondisi kelas berubah</li>
+                <li>Growth mindset: menerima umpan balik sebagai bahan bakar perbaikan, bukan ancaman</li>
+                <li>Penguasaan media digital yang memungkinkan pembelajaran lebih interaktif dan variatif</li>
+                <li>Konsistensi dalam mendokumentasikan dan merefleksikan setiap pengalaman mengajar</li>
+              </ul>
+            </div>
+          </div>
+          <div class="rd-card">
+            <div class="rd-card-header">
+              <div class="rd-card-icon rd-card-icon--b">
+                <i class="fa-solid fa-circle-exclamation"></i>
+              </div>
+              <div class="rd-card-title">Area Pengembangan</div>
+            </div>
+            <div class="rd-card-body">
+              <ul>
+                <li>Manajemen waktu antar-fase pembelajaran perlu diperketat dengan sistem yang lebih terstruktur</li>
+                <li>Perancangan asesmen autentik multi-dimensi masih perlu diperdalam</li>
+                <li>Diferensiasi instruksional berbasis data diagnostik belum diterapkan secara sistematis</li>
+                <li>Kemampuan menulis jurnal refleksi berbasis model ilmiah (GIBBS/STAR) perlu ditingkatkan</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pengalaman Berkesan -->
+        <div class="highlight-box fade-in" style="margin-top:1.5rem;">
+          <h4 style="font-size:0.88rem;font-weight:700;color:var(--text);margin:0 0 0.7rem;display:flex;align-items:center;gap:0.4rem;">
+            <i class="fa-solid fa-heart" style="color:var(--accent2);"></i>
+            Pengalaman Paling Berkesan
+          </h4>
+          <p>
+            Momen paling berkesan sepanjang PPL Terbimbing adalah ketika saya menyaksikan transformasi nyata pada kelompok yang paling lambat di Siklus 1. Mereka yang awalnya frustrasi dan hampir menyerah karena gagal menginstal WordPress, berhasil tampil dengan presentasi kasus HAKI terbaik di seluruh kelas pada Siklus 3 — lengkap dengan argumen yang kuat, referensi regulasi yang tepat, dan rasa percaya diri yang jauh berbeda dari kondisi awal mereka.
+          </p>
+          <p>
+            Transformasi ini mengingatkan saya pada prinsip paling fundamental dalam pendidikan: tugas terpenting seorang guru bukan sekadar menyampaikan materi, melainkan menjaga agar setiap siswa tidak kehilangan kepercayaan pada kemampuan dirinya sendiri. Ketika kepercayaan itu terjaga, pertumbuhan akan terjadi dengan sendirinya.
+          </p>
+        </div>
+
+        <!-- Target Pengembangan Kompetensi -->
+        <h3 class="section-eyebrow fade-in" style="margin-top:2rem;">
+          <i class="fa-solid fa-rocket" style="color:var(--accent3);margin-right:0.5rem;"></i>
+          Target Pengembangan Kompetensi Menuju PPL Mandiri
+        </h3>
+        <div class="card-grid card-grid-2 card-grid--spaced fade-in">
+          <div class="card">
+            <div class="card-icon"><i class="fa-solid fa-clipboard-list" style="color:var(--accent);"></i></div>
+            <div class="card-title">Asesmen Formatif Digital</div>
+            <div class="card-body">Merancang sistem asesmen berbasis portofolio digital yang memungkinkan penilaian proses (bukan hanya produk akhir) secara real-time menggunakan platform Google Classroom atau Padlet.</div>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="fa-solid fa-brain" style="color:var(--accent2);"></i></div>
+            <div class="card-title">Literasi Instruksional Siswa</div>
+            <div class="card-body">Membangun rutinitas "baca instruksi mandiri" di setiap awal sesi praktik sebagai fondasi kemandirian belajar yang sistematis, sesuai saran Guru Pamong dan DPL.</div>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="fa-solid fa-sliders" style="color:var(--accent3);"></i></div>
+            <div class="card-title">Diferensiasi Berbasis Data</div>
+            <div class="card-body">Menerapkan asesmen diagnostik di awal setiap topik untuk memetakan kemampuan awal siswa, sehingga diferensiasi konten dan proses dapat dirancang dengan bukti, bukan asumsi.</div>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="fa-solid fa-network-wired" style="color:var(--accent);"></i></div>
+            <div class="card-title">Jejaring Profesional</div>
+            <div class="card-body">Bergabung aktif dalam MGMP TIK regional dan komunitas guru inovatif nasional untuk terus memperbarui praktik baik dan memberikan kontribusi nyata bagi peningkatan mutu pendidikan TIK.</div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ═══════ FOOTER ═══════ -->
+    <footer>
+      <p>
+        <i
+          class="fa-solid fa-graduation-cap"
+          style="margin-right: 0.4rem; opacity: 0.7"
+        ></i>
+        E-Portfolio PPL Terbimbing &middot; <span>Arbiansyah</span>
+      </p>
+      <p class="footer-subtitle">
+        Pendidikan Profesi Guru &middot; Universitas Islam Makassar &middot;
+        2026
+      </p>
+      <p class="footer-subtitle" style="margin-top:0.5rem;display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap;">
+        <a href="mailto:arbiansyah@gmail.com" style="color:inherit;text-decoration:none;opacity:0.7;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">
+          <i class="fa-solid fa-envelope" style="margin-right:0.3rem;"></i>arbiansyah@gmail.com
+        </a>
+        <a href="https://wa.me/6285255140030" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;opacity:0.7;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">
+          <i class="fa-brands fa-whatsapp" style="margin-right:0.3rem;"></i>WhatsApp
+        </a>
+        <a href="index.html" style="color:inherit;text-decoration:none;opacity:0.7;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">
+          <i class="fa-solid fa-house" style="margin-right:0.3rem;"></i>E-Portfolio 1
+        </a>
+      </p>
+    </footer>
+
+    <button
+      class="back-to-top"
+      id="back-to-top"
+      type="button"
+      aria-label="Kembali ke atas"
+    >
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Modal (shared) -->
+    <div
+      class="modal"
+      id="media-modal"
+      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div class="modal-backdrop" data-modal-close></div>
+      <div class="modal-panel" role="document">
+        <div class="modal-header">
+          <div class="modal-title">Preview</div>
+          <div class="modal-header-actions">
+            <a
+              class="modal-ext"
+              id="modal-ext"
+              target="_blank"
+              rel="noopener noreferrer"
+              hidden
+            >
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              <span>Buka</span>
+            </a>
+            <button class="modal-close" type="button" data-modal-close>
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+        </div>
+        <div class="modal-content"></div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/animejs/dist/bundles/anime.umd.min.js"></script>
+
+    <script>
+      // Hero entrance + scroll reveals  anime.js v4 with graceful fallback.
+      (function () {
+        const lib = window.anime;
+        const hasAnime = lib && typeof lib.animate === "function";
+        const prefersReduced = window.matchMedia(
+          "(prefers-reduced-motion: reduce)",
+        ).matches;
+
+        // ── Hero entrance ──
+        const heroSel = [
+          ".anime-hero-tag",
+          ".anime-hero-h1",
+          ".anime-hero-title",
+          ".anime-hero-quote",
+        ];
+        const revealHero = () =>
+          heroSel.forEach((s) =>
+            document.querySelectorAll(s).forEach((el) => {
+              el.style.opacity = "1";
+              el.style.transform = "none";
+            }),
+          );
+
+        if (hasAnime && !prefersReduced) {
+          try {
+            lib
+              .createTimeline({ defaults: { ease: "outExpo" } })
+              .add(".anime-hero-tag", {
+                opacity: [0, 1],
+                translateY: [24, 0],
+                duration: 700,
+              })
+              .add(
+                ".anime-hero-h1",
+                { opacity: [0, 1], translateY: [40, 0], duration: 900 },
+                "-=400",
+              )
+              .add(
+                ".anime-hero-title",
+                { opacity: [0, 1], translateY: [20, 0], duration: 700 },
+                "-=500",
+              )
+              .add(
+                ".anime-hero-quote",
+                { opacity: [0, 1], translateY: [16, 0], duration: 700 },
+                "-=400",
+              );
+            lib.animate(".hero-glow", {
+              translateY: ["-6px", "6px"],
+              duration: 3200,
+              loop: true,
+              alternate: true,
+              ease: "inOutSine",
+            });
+            lib.animate(".hero-tag-icon", {
+              rotate: "1turn",
+              duration: 8000,
+              loop: true,
+              ease: "linear",
+            });
+          } catch (e) {
+            revealHero();
+          }
+        } else {
+          revealHero();
+        }
+
+        // ── Scroll reveals (CSS-class based, no anime dependency) ──
+        document.body.classList.add("js-reveal");
+
+        const obs = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+              entry.target.classList.add("visible");
+              obs.unobserve(entry.target);
+            });
+          },
+          { threshold: 0.12 },
+        );
+
+        // Simple reveals (CSS already defines .visible for these)
+        document
+          .querySelectorAll(".qa-item, .filosifi-block, .section-divider")
+          .forEach((el) => obs.observe(el));
+
+        // Staggered groups: delay scales with index within each group
+        [".rtl-card", ".stat-chip", ".prinsip-list li"].forEach((sel) => {
+          document.querySelectorAll(sel).forEach((el, i) => {
+            el.style.transitionDelay = i * 70 + "ms";
+            obs.observe(el);
+          });
+        });
+      })();
+    </script>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
